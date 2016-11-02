@@ -61,8 +61,7 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
         </InvertParam>
         <FermionAction>
           <FermAct>WILSON</FermAct>
-          <!-- TODO Set m_ud = -0.1265. -->
-          <Kappa>0.11</Kappa>
+          <Mass>-0.1265</Mass>
           <FermionBC>
             <FermBC>TWISTED_FERMBC</FermBC>
             <!-- TODO Bartek said that we want twisted boundary conditions? From the source code I gathered that we need an `int`-array `boundary`, a `Real`-array `phases_by_pi` and another `int`-array `phases_dir`. I do not want to include pi numerically as that would certainly introduce roundoff errors, perhaps it should be something like `1.0` in the directions that we want to have the twisted boundary conditions? -->
