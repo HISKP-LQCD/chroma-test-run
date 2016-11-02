@@ -24,7 +24,7 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
       </Seed>
     </RNG>
 
-    <!-- TODO How man trajectories do we want? -->
+    <!-- TODO How many trajectories do we want? -->
     <StartUpdateNum>0</StartUpdateNum>
     <NWarmUpUpdates>0</NWarmUpUpdates>
     <NProductionUpdates>2</NProductionUpdates>
