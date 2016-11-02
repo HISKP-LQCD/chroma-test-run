@@ -69,7 +69,7 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
             <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
             <phases_dir>1 1 1</phases_dir>
           </FermionBC>
-          <!-- TODO I am not sure how `FermionAction`, `FermState` and `FermionBC` have to be nested. -->
+          <!-- TODO I am not sure how `FermionAction`, `FermState` and `FermionBC` have to be nested. This way the `hmc` runs through. I am not sure whether the data generated makes any sense, though. -->
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
             <!-- TODO Set a sensible ρ. -->
@@ -117,6 +117,51 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
         </ChronologicalPredictor>
         <NamedObject>
           <monomial_id>strange_wilson</monomial_id>
+        </NamedObject>
+      </elem>
+
+      <!-- Clover: up, down -->
+      <elem>
+        <!-- The clover term depends on the Gauge fields in the even-even term, so we cannot use `CONSTDET` but must use `LOGDET`. Is that correct? -->
+        <Name>TWO_FLAVOR_EOPREC_LOGDET_FERM_MONOMIAL</Name>
+        <InvertParam>
+          <!-- TODO The only ones with `MULTIGRID` in their name seem to be the `QOP_CLOVER_MULTIGRID_INVERTER` and the various `QUDA` ones. -->
+          <invType>CG_INVERTER</invType>
+          <RsdCG>1.0e-12</RsdCG>
+          <MaxCG>1000</MaxCG>
+        </InvertParam>
+        <FermionAction>
+          <FermAct>CLOVER</FermAct>
+          <Mass>-0.1265</Mass>
+          <!-- In Duerr-2009-Scaling_Study_of_Dynamically_Smeared-Link_Clover_Fermions they use c_{SW} = 1, so I do it here as well. -->
+          <clovCoeff>1.0</clovCoeff>
+          <FermionBC>
+            <!-- TODO What about boundary conditions here? -->
+            <FermBC>TWISTED_FERMBC</FermBC>
+            <boundary>1 1 1 1</boundary>
+            <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
+            <phases_dir>1 1 1</phases_dir>
+          </FermionBC>
+          <FermState>
+            <Name>STOUT_FERM_STATE</Name>
+            <!-- TODO Set a sensible ρ. -->
+            <rho>1.0</rho>
+            <n_smear>6</n_smear>
+            <!-- One can add `orthog_dir` to smear in certain directions. -->
+            <FermionBC>
+              <!-- TODO Do those boundary conditions have to be the same? Do they have to be something different? -->
+              <FermBC>TWISTED_FERMBC</FermBC>
+              <boundary>1 1 1 1</boundary>
+              <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
+              <phases_dir>1 1 1</phases_dir>
+            </FermionBC>
+          </FermState>
+        </FermionAction>
+        <ChronologicalPredictor>
+          <Name>LAST_SOLUTION_4D_PREDICTOR</Name>
+        </ChronologicalPredictor>
+        <NamedObject>
+          <monomial_id>up_down_clover</monomial_id>
         </NamedObject>
       </elem>
 
@@ -175,6 +220,7 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
       <monomial_ids>
         <elem>gauge</elem>
         <elem>up_down_wilson</elem>
+        <elem>up_down_clover</elem>
         <elem>strange_wilson</elem>
         <!-- <elem>up_down_hasenbusch</elem> -->
       </monomial_ids>
@@ -190,6 +236,7 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
         <n_steps>25</n_steps>
         <monomial_ids>
           <elem>up_down_wilson</elem>
+          <!-- TODO Integrate the `up_down_clover` term somewhere. -->
         </monomial_ids>
         <!-- TODO This subintegrator is just an example, probably we want to have much more stuff. -->
         <SubIntegrator>
