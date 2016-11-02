@@ -202,10 +202,15 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
         </SubIntegrator>
       </Integrator>
     </MDIntegrator>
-    <!-- TODO Check that the time really goes last and not first. -->
-    <nrow>24 24 24 64</nrow>
-  </HMCTrj>
 
+    <!-- TODO Check that the time really goes last and not first. From the
+         various tutorials it seems that the last value is special, that should
+         be time. -->
+
+    <!-- <nrow>24 24 24 64</nrow> -->
+    <nrow>4 4 4 8</nrow>
+
+  </HMCTrj>
 
 </Params>
 
