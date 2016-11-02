@@ -70,6 +70,13 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
             <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
             <phases_dir>1 1 1</phases_dir>
           </FermionBC>
+          <!-- TODO I am not sure how `FermionAction`, `FermState` and `FermionBC` have to be nested. -->
+          <FermState>
+            <Name>STOUT_FERM_STATE</Name>
+            <rho>TODO</rho>
+            <n_smear>6</n_smear>
+            <!-- One can add `orthog_dir` to smear in certain directions. -->
+          </FermState>
         </FermionAction>
         <ChronologicalPredictor>
           <Name>LAST_SOLUTION_4D_PREDICTOR</Name>
@@ -123,13 +130,6 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
             <FermBC>SIMPLE_FERMBC</FermBC>
             <boundary>1 1 1 -1</boundary>
           </FermionBC>
-          <!-- TODO I am not sure how `FermionAction`, `FermState` and `FermionBC` have to be nested. -->
-          <FermState>
-            <Name>STOUT_FERM_STATE</Name>
-            <rho>TODO</rho>
-            <n_smear>6</n_smear>
-            <!-- One can add `orthog_dir` to smear in certain directions. -->
-          </FermState>
         </FermionAction>
         <FermionActionPrec>
           <FermAct>PARWILSON</FermAct>
