@@ -73,7 +73,8 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
           <!-- TODO I am not sure how `FermionAction`, `FermState` and `FermionBC` have to be nested. -->
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
-            <rho>TODO</rho>
+            <!-- TODO Set a sensible ρ. -->
+            <rho>1.0</rho>
             <n_smear>6</n_smear>
             <!-- One can add `orthog_dir` to smear in certain directions. -->
             <FermionBC>
