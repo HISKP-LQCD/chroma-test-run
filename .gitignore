@@ -1,4 +1,6 @@
-XMLDAT
-XMLLOG
+*.lime
+*_restart_*.xml
 testrun.log.txt
 testrun.out.xml
+XMLDAT
+XMLLOG
