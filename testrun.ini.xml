@@ -88,70 +88,8 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
           <Name>LAST_SOLUTION_4D_PREDICTOR</Name>
         </ChronologicalPredictor>
         <NamedObject>
-          <monomial_id>wilson_two_flav</monomial_id>
-        </NamedObject>
-      </elem>
-
-      <!-- Quarks: strange -->
-      <elem>
-        <Name>TWO_FLAVOR_EOPREC_CONSTDET_FERM_MONOMIAL</Name>
-        <InvertParam>
-          <!-- TODO The only ones with `MULTIGRID` in their name seem to be the `QOP_CLOVER_MULTIGRID_INVERTER` and the various `QUDA` ones. -->
-          <invType>CG_INVERTER</invType>
-          <RsdCG>1.0e-12</RsdCG>
-          <MaxCG>1000</MaxCG>
-        </InvertParam>
-        <FermionAction>
-          <FermAct>PARWILSON</FermAct>
-          <!-- TODO Set m_s = -0.057. -->
-          <Kappa>0.11</Kappa>
-          <!-- TODO This `H` needs to be tuned. -->
-          <H>0.33</H>
-          <FermionBC>
-            <FermBC>SIMPLE_FERMBC</FermBC>
-            <boundary>1 1 1 -1</boundary>
-          </FermionBC>
-        </FermionAction>
-        <ChronologicalPredictor>
-          <Name>LAST_SOLUTION_4D_PREDICTOR</Name>
-        </ChronologicalPredictor>
-        <NamedObject>
           <monomial_id>up_down_wilson</monomial_id>
         </NamedObject>
-      </elem>
-
-      <!-- Hasenbusch term for up and down quarks. -->
-      <elem>
-        <Name>TWO_FLAVOR_EOPREC_CONSTDET_HASENBUSCH_FERM_MONOMIAL</Name>
-        <InvertParam>
-          <invType>CG_INVERTER</invType>
-          <RsdCG>1.0e-07</RsdCG>
-          <MaxCG>1000</MaxCG>
-        </InvertParam>
-        <FermionAction>
-          <FermAct>WILSON</FermAct>
-          <!-- TODO Set m_ud = -0.1265. -->
-          <Kappa>0.11</Kappa>
-          <FermionBC>
-            <FermBC>SIMPLE_FERMBC</FermBC>
-            <boundary>1 1 1 -1</boundary>
-          </FermionBC>
-        </FermionAction>
-        <FermionActionPrec>
-          <FermAct>PARWILSON</FermAct>
-          <!-- TODO Set m_ud = -0.1265. -->
-          <Kappa>0.11</Kappa>
-          <!-- TODO This `H` needs to be tuned. -->
-          <H>0.33</H>
-          <FermionBC>
-            <FermBC>SIMPLE_FERMBC</FermBC>
-            <boundary>1 1 1 -1</boundary>
-          </FermionBC>
-        </FermionActionPrec>
-        <ChronologicalPredictor>
-          <Name>ZERO_GUESS_4D_PREDICTOR</Name>
-        </ChronologicalPredictor>
-        <NamedObject><monomial_id>hasen</monomial_id></NamedObject>
       </elem>
 
       <!-- The gauge action should be just fine, the β is set to the value from the paper. -->
@@ -174,7 +112,6 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
       <monomial_ids>
         <elem>gauge</elem>
         <elem>up_down_wilson</elem>
-        <elem>up_down_hasenbusch</elem>
       </monomial_ids>
     </Hamiltonian>
 
