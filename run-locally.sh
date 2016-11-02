@@ -6,4 +6,4 @@ set -e
 set -u
 set -x
 
-hmc -i testrun.ini.xml -o testrun.out.xml > testrun.log.txt
+hmc -i testrun.ini.xml -o testrun.out.xml #> testrun.log.txt
