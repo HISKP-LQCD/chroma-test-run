@@ -2,6 +2,8 @@
 <!--
 Chroma `hmc` input file. It is based on [Carsten's `hmc`
 tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
+
+Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
 -->
 <Params>
   <MCControl>
