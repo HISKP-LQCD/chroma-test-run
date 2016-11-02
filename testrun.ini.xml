@@ -237,6 +237,7 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
         <monomial_ids>
           <elem>up_down_wilson</elem>
           <elem>up_down_clover</elem>
+          <elem>strange_wilson</elem>
         </monomial_ids>
         <!-- TODO This subintegrator is just an example, probably we want to have much more stuff. -->
         <SubIntegrator>
