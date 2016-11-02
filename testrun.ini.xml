@@ -7,8 +7,7 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
   <MCControl>
 
     <Cfg>
-      <!-- TODO What type of configuration do we want to start with, `UNIT`
-             (cold) or `DISORDERED` (hot) or `WEAK_FIELD` (no idea) perhaps? -->
+      <!-- TODO What type of configuration do we want to start with, `UNIT` (cold) or `DISORDERED` (hot) or `WEAK_FIELD` (no idea) perhaps? -->
       <cfg_type>UNIT</cfg_type>
       <cfg_file>DUMMY</cfg_file>
     </Cfg>
@@ -34,8 +33,7 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
     <SavePrefix>testrun</SavePrefix>
     <SaveVolfmt>SINGLEFILE</SaveVolfmt>
 
-    <!-- TODO Do we want such an inline measurement? In the tutorial this is
-         used to show the thermalization from the cold and hot start. -->
+    <!-- TODO Do we want such an inline measurement? In the tutorial this is used to show the thermalization from the cold and hot start. -->
     <InlineMeasurements>
       <elem>
         <Name>POLYAKOV_LOOP</Name>
@@ -56,8 +54,7 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
       <elem>
         <Name>TWO_FLAVOR_EOPREC_CONSTDET_FERM_MONOMIAL</Name>
         <InvertParam>
-          <!-- TODO The only ones with `MULTIGRID` in their name seem to be the
-               `QOP_CLOVER_MULTIGRID_INVERTER` and the various `QUDA` ones. -->
+          <!-- TODO The only ones with `MULTIGRID` in their name seem to be the `QOP_CLOVER_MULTIGRID_INVERTER` and the various `QUDA` ones. -->
           <invType>CG_INVERTER</invType>
           <RsdCG>1.0e-12</RsdCG>
           <MaxCG>1000</MaxCG>
@@ -68,13 +65,7 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
           <Kappa>0.11</Kappa>
           <FermionBC>
             <FermBC>TWISTED_FERMBC</FermBC>
-            <!-- TODO Bartek said that we want twisted boundary conditions?
-                From the source code I gathered that we need an `int`-array
-                `boundary`, a `Real`-array `phases_by_pi` and another
-                `int`-array `phases_dir`. I do not want to include pi
-                numerically as that would certainly introduce roundoff errors,
-                perhaps it should be something like `1.0` in the directions
-                that we want to have the twisted boundary conditions? -->
+            <!-- TODO Bartek said that we want twisted boundary conditions? From the source code I gathered that we need an `int`-array `boundary`, a `Real`-array `phases_by_pi` and another `int`-array `phases_dir`. I do not want to include pi numerically as that would certainly introduce roundoff errors, perhaps it should be something like `1.0` in the directions that we want to have the twisted boundary conditions? -->
             <boundary>1 1 1 1</boundary>
             <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
             <phases_dir>1 1 1</phases_dir>
@@ -92,8 +83,7 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
       <elem>
         <Name>TWO_FLAVOR_EOPREC_CONSTDET_FERM_MONOMIAL</Name>
         <InvertParam>
-          <!-- TODO The only ones with `MULTIGRID` in their name seem to be the
-               `QOP_CLOVER_MULTIGRID_INVERTER` and the various `QUDA` ones. -->
+          <!-- TODO The only ones with `MULTIGRID` in their name seem to be the `QOP_CLOVER_MULTIGRID_INVERTER` and the various `QUDA` ones. -->
           <invType>CG_INVERTER</invType>
           <RsdCG>1.0e-12</RsdCG>
           <MaxCG>1000</MaxCG>
@@ -133,34 +123,32 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
             <FermBC>SIMPLE_FERMBC</FermBC>
             <boundary>1 1 1 -1</boundary>
           </FermionBC>
-          <!-- TODO I am not sure how `FermionAction`, `FermState` and
-             `FermionBC` have to be nested. -->
-        <FermState>
-          <Name>STOUT_FERM_STATE</Name>
-          <rho>TODO</rho>
-          <n_smear>6</n_smear>
-          <!-- One can add `orthog_dir` to smear in certain directions. -->
-        </FermState>
-      </FermionAction>
-      <FermionActionPrec>
-        <FermAct>PARWILSON</FermAct>
-        <!-- TODO Set m_ud = -0.1265. -->
-        <Kappa>0.11</Kappa>
-        <!-- TODO This `H` needs to be tuned. -->
-        <H>0.33</H>
-        <FermionBC>
-          <FermBC>SIMPLE_FERMBC</FermBC>
-          <boundary>1 1 1 -1</boundary>
-        </FermionBC>
-      </FermionActionPrec>
-      <ChronologicalPredictor>
-        <Name>ZERO_GUESS_4D_PREDICTOR</Name>
-      </ChronologicalPredictor>
-      <NamedObject><monomial_id>hasen</monomial_id></NamedObject>
-    </elem>
+          <!-- TODO I am not sure how `FermionAction`, `FermState` and `FermionBC` have to be nested. -->
+          <FermState>
+            <Name>STOUT_FERM_STATE</Name>
+            <rho>TODO</rho>
+            <n_smear>6</n_smear>
+            <!-- One can add `orthog_dir` to smear in certain directions. -->
+          </FermState>
+        </FermionAction>
+        <FermionActionPrec>
+          <FermAct>PARWILSON</FermAct>
+          <!-- TODO Set m_ud = -0.1265. -->
+          <Kappa>0.11</Kappa>
+          <!-- TODO This `H` needs to be tuned. -->
+          <H>0.33</H>
+          <FermionBC>
+            <FermBC>SIMPLE_FERMBC</FermBC>
+            <boundary>1 1 1 -1</boundary>
+          </FermionBC>
+        </FermionActionPrec>
+        <ChronologicalPredictor>
+          <Name>ZERO_GUESS_4D_PREDICTOR</Name>
+        </ChronologicalPredictor>
+        <NamedObject><monomial_id>hasen</monomial_id></NamedObject>
+      </elem>
 
-    <!-- The gauge action should be just fine, the β is set to the value from
-           the paper. -->
+      <!-- The gauge action should be just fine, the β is set to the value from the paper. -->
       <elem>
         <Name>GAUGE_MONOMIAL</Name>
         <GaugeAction>
@@ -188,17 +176,14 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
       <!-- TODO Is that the desired timescale? -->
       <tau0>0.5</tau0>
       <Integrator>
-        <!-- TODO Is that a suitable integrator or do we want something
-             fancier? -->
+        <!-- TODO Is that a suitable integrator or do we want something fancier? -->
         <Name>LCM_STS_LEAPFROG</Name>
-        <!-- TODO This would give a trajectory length of 12.5. Shouldn't the
-             trajectory length be in the order of unity? -->
+        <!-- TODO This would give a trajectory length of 12.5. Shouldn't the trajectory length be in the order of unity? -->
         <n_steps>25</n_steps>
         <monomial_ids>
           <elem>up_down_wilson</elem>
         </monomial_ids>
-        <!-- TODO This subintegrator is just an example, probably we want to
-             have much more stuff. -->
+        <!-- TODO This subintegrator is just an example, probably we want to have much more stuff. -->
         <SubIntegrator>
           <Name>LCM_STS_LEAPFROG</Name>
           <n_steps>2</n_steps>
@@ -209,9 +194,7 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
       </Integrator>
     </MDIntegrator>
 
-    <!-- TODO Check that the time really goes last and not first. From the
-         various tutorials it seems that the last value is special, that should
-         be time. -->
+    <!-- TODO Check that the time really goes last and not first. From the various tutorials it seems that the last value is special, that should be time. -->
 
     <!-- <nrow>24 24 24 64</nrow> -->
     <nrow>4 4 4 8</nrow>
