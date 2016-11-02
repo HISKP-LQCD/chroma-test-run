@@ -236,7 +236,7 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
         <n_steps>25</n_steps>
         <monomial_ids>
           <elem>up_down_wilson</elem>
-          <!-- TODO Integrate the `up_down_clover` term somewhere. -->
+          <elem>up_down_clover</elem>
         </monomial_ids>
         <!-- TODO This subintegrator is just an example, probably we want to have much more stuff. -->
         <SubIntegrator>
