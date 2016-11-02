@@ -121,6 +121,7 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
       </elem>
 
       <!-- Hasenbusch term for up and down quarks. -->
+      <!-- FIXME This is not available in Chroma any more, it must have been named differently at some point between 2008 and 2016. -->
       <annotation>
       <elem>
         <Name>TWO_FLAVOR_EOPREC_CONSTDET_HASENBUSCH_FERM_MONOMIAL</Name>
@@ -131,8 +132,7 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
         </InvertParam>
         <FermionAction>
           <FermAct>WILSON</FermAct>
-          <!-- TODO Set m_ud = -0.1265. -->
-          <Kappa>0.11</Kappa>
+          <Mass>-0.1265</Mass>
           <FermionBC>
             <FermBC>SIMPLE_FERMBC</FermBC>
             <boundary>1 1 1 -1</boundary>
@@ -140,8 +140,7 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
         </FermionAction>
         <FermionActionPrec>
           <FermAct>PARWILSON</FermAct>
-          <!-- TODO Set m_ud = -0.1265. -->
-          <Kappa>0.11</Kappa>
+          <Mass>-0.1265</Mass>
           <!-- TODO This `H` needs to be tuned. -->
           <H>0.33</H>
           <FermionBC>
