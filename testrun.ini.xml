@@ -133,33 +133,33 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
             <FermBC>SIMPLE_FERMBC</FermBC>
             <boundary>1 1 1 -1</boundary>
           </FermionBC>
-        <!-- TODO I am not sure how `FermionAction`, `FermState` and
+          <!-- TODO I am not sure how `FermionAction`, `FermState` and
              `FermionBC` have to be nested. -->
         <FermState>
           <Name>STOUT_FERM_STATE</Name>
-            <rho>TODO</rho>
-            <n_smear>6</n_smear>
-            <!-- One can add <orthog_dir> to smear in certain directions. -->
+          <rho>TODO</rho>
+          <n_smear>6</n_smear>
+          <!-- One can add `orthog_dir` to smear in certain directions. -->
         </FermState>
-        </FermionAction>
-        <FermionActionPrec>
-          <FermAct>PARWILSON</FermAct>
-          <!-- TODO Set m_ud = -0.1265. -->
-          <Kappa>0.11</Kappa>
-          <!-- TODO This `H` needs to be tuned. -->
-          <H>0.33</H>
-          <FermionBC>
-            <FermBC>SIMPLE_FERMBC</FermBC>
-            <boundary>1 1 1 -1</boundary>
-          </FermionBC>
-        </FermionActionPrec>
-        <ChronologicalPredictor>
-          <Name>ZERO_GUESS_4D_PREDICTOR</Name>
-        </ChronologicalPredictor>
-        <NamedObject><monomial_id>hasen</monomial_id></NamedObject>
-      </elem>
+      </FermionAction>
+      <FermionActionPrec>
+        <FermAct>PARWILSON</FermAct>
+        <!-- TODO Set m_ud = -0.1265. -->
+        <Kappa>0.11</Kappa>
+        <!-- TODO This `H` needs to be tuned. -->
+        <H>0.33</H>
+        <FermionBC>
+          <FermBC>SIMPLE_FERMBC</FermBC>
+          <boundary>1 1 1 -1</boundary>
+        </FermionBC>
+      </FermionActionPrec>
+      <ChronologicalPredictor>
+        <Name>ZERO_GUESS_4D_PREDICTOR</Name>
+      </ChronologicalPredictor>
+      <NamedObject><monomial_id>hasen</monomial_id></NamedObject>
+    </elem>
 
-      <!-- The gauge action should be just fine, the β is set to the value from
+    <!-- The gauge action should be just fine, the β is set to the value from
            the paper. -->
       <elem>
         <Name>GAUGE_MONOMIAL</Name>
