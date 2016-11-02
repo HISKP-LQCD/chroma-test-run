@@ -67,8 +67,11 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
           <!-- TODO Set m_ud = -0.1265. -->
           <Kappa>0.11</Kappa>
           <FermionBC>
-            <FermBC>SIMPLE_FERMBC</FermBC>
-            <boundary>1 1 1 -1</boundary>
+            <!-- TODO Bartek said that we want twisted boundary conditions?
+                 Does this look sensible? I need to check whether this actually
+                 runs. -->
+            <FermBC>TWISTED_FERMBC</FermBC>
+            <boundary>0 0 0 pi</boundary>
           </FermionBC>
         </FermionAction>
         <ChronologicalPredictor>
@@ -124,6 +127,14 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
             <FermBC>SIMPLE_FERMBC</FermBC>
             <boundary>1 1 1 -1</boundary>
           </FermionBC>
+        <!-- TODO I am not sure how `FermionAction`, `FermState` and
+             `FermionBC` have to be nested. -->
+        <FermState>
+          <Name>STOUT_FERM_STATE</Name>
+            <rho>TODO</rho>
+            <n_smear>6</n_smear>
+            <!-- One can add <orthog_dir> to smear in certain directions. -->
+        </FermState>
         </FermionAction>
         <FermionActionPrec>
           <FermAct>PARWILSON</FermAct>
