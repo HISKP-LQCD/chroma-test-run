@@ -1,14 +1,21 @@
 <?xml version="1.0"?>
+<!--
+Chroma `hmc` input file. It is based on [Carsten's `hmc`
+tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/one.html).
+-->
 <Params> 
   <MCControl>
 
     <Cfg>
+        <!-- TODO What type of configuration do we want to start with, `UNIT`
+             (cold) or `DISORDERED` (hot) or `WEAK_FIELD` (no idea) perhaps? -->
       <cfg_type>UNIT</cfg_type>
       <cfg_file>DUMMY</cfg_file>
     </Cfg>
 
     <RNG>
       <Seed>	
+        <!-- TODO Do we want any special seeds here? -->
         <elem>11</elem>
         <elem>0 </elem>
         <elem>0 </elem>
@@ -16,14 +23,19 @@
       </Seed>
     </RNG>
 
+    <!-- TODO How man trajectories do we want? -->
     <StartUpdateNum>0</StartUpdateNum>
     <NWarmUpUpdates>0</NWarmUpUpdates>  
     <NProductionUpdates>40</NProductionUpdates>
     <NUpdatesThisRun>40</NUpdatesThisRun>
     <SaveInterval>10</SaveInterval>
-    <SavePrefix>cold_run</SavePrefix>
+
+    <!-- This probably generates a single LIME file for everything. -->
+    <SavePrefix>testrun</SavePrefix>
     <SaveVolfmt>SINGLEFILE</SaveVolfmt>
 
+    <!-- TODO Do we want such an inline measurement? In the tutorial this is
+         used to show the thermalization from the cold and hot start. -->
     <InlineMeasurements>
       <elem>
         <Name>POLYAKOV_LOOP</Name>
@@ -43,6 +55,8 @@
       <elem>
 	<Name>TWO_FLAVOR_EOPREC_CONSTDET_FERM_MONOMIAL</Name>
 	<InvertParam>
+          <!-- TODO The only ones with `MULTIGRID` in their name seem to be the
+               `QOP_CLOVER_MULTIGRID_INVERTER` and the various `QUDA` ones. -->
           <invType>CG_INVERTER</invType>
           <RsdCG>1.0e-12</RsdCG>
           <MaxCG>1000</MaxCG>
@@ -63,11 +77,13 @@
 	</NamedObject>
       </elem>
 
+      <!-- The gauge action should be just fine, the β is set to the value from
+           the paper. -->
       <elem>
 	<Name>GAUGE_MONOMIAL</Name>
 	<GaugeAction>
 	   <Name>WILSON_GAUGEACT</Name>
-	   <beta>5.2</beta>
+	   <beta>3.3</beta>
 	   <GaugeBC>
 		<Name>PERIODIC_GAUGEBC</Name>
            </GaugeBC>
@@ -97,9 +113,10 @@
 	  </monomial_ids>
 	</Integrator>
    </MDIntegrator>
-   <nrow>4 4 4 4</nrow>
+   <!-- TODO Check that the time really goes last and not first. -->
+   <nrow>24 24 24 64</nrow>
  </HMCTrj>
 
 </Params>
 
-
+<!-- vim: set sw=2 et : -->
