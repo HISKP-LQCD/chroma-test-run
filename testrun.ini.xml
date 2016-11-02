@@ -89,7 +89,7 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
           <Name>LAST_SOLUTION_4D_PREDICTOR</Name>
         </ChronologicalPredictor>
         <NamedObject>
-          <monomial_id>wilson_two_flav</monomial_id>
+          <monomial_id>up_down_wilson</monomial_id>
         </NamedObject>
       </elem>
 
@@ -104,8 +104,7 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
         </InvertParam>
         <FermionAction>
           <FermAct>PARWILSON</FermAct>
-          <!-- TODO Set m_s = -0.057. -->
-          <Kappa>0.11</Kappa>
+          <Mass>-0.057</Mass>
           <!-- TODO This `H` needs to be tuned. -->
           <H>0.33</H>
           <FermionBC>
@@ -117,11 +116,12 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
           <Name>LAST_SOLUTION_4D_PREDICTOR</Name>
         </ChronologicalPredictor>
         <NamedObject>
-          <monomial_id>up_down_wilson</monomial_id>
+          <monomial_id>strange_wilson</monomial_id>
         </NamedObject>
       </elem>
 
       <!-- Hasenbusch term for up and down quarks. -->
+      <annotation>
       <elem>
         <Name>TWO_FLAVOR_EOPREC_CONSTDET_HASENBUSCH_FERM_MONOMIAL</Name>
         <InvertParam>
@@ -154,6 +154,7 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
         </ChronologicalPredictor>
         <NamedObject><monomial_id>hasen</monomial_id></NamedObject>
       </elem>
+      </annotation>
 
       <!-- The gauge action should be just fine, the β is set to the value from the paper. -->
       <elem>
@@ -175,7 +176,8 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
       <monomial_ids>
         <elem>gauge</elem>
         <elem>up_down_wilson</elem>
-        <elem>up_down_hasenbusch</elem>
+        <elem>strange_wilson</elem>
+        <!-- <elem>up_down_hasenbusch</elem> -->
       </monomial_ids>
     </Hamiltonian>
 
