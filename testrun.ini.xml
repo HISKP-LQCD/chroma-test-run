@@ -197,6 +197,8 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
     <nrow>24 24 24 64</nrow>
   </HMCTrj>
 
+  <!-- TODO Add STOUT_SMEAR with 6. -->
+
 </Params>
 
 <!-- vim: set sw=2 et : -->
