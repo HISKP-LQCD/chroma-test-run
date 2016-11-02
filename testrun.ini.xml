@@ -78,6 +78,7 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
             <n_smear>6</n_smear>
             <!-- One can add `orthog_dir` to smear in certain directions. -->
             <FermionBC>
+              <!-- TODO Do those boundary conditions have to be the same? Do they have to be something different? -->
               <FermBC>TWISTED_FERMBC</FermBC>
               <boundary>1 1 1 1</boundary>
               <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
