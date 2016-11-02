@@ -90,9 +90,11 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
           <MaxCG>1000</MaxCG>
         </InvertParam>
         <FermionAction>
-          <FermAct>WILSON</FermAct>
+          <FermAct>PARWILSON</FermAct>
           <!-- TODO Set m_s = -0.057. -->
           <Kappa>0.11</Kappa>
+          <!-- TODO This `H` needs to be tuned. -->
+          <H>0.33</H>
           <FermionBC>
             <FermBC>SIMPLE_FERMBC</FermBC>
             <boundary>1 1 1 -1</boundary>
@@ -102,7 +104,7 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
           <Name>LAST_SOLUTION_4D_PREDICTOR</Name>
         </ChronologicalPredictor>
         <NamedObject>
-          <monomial_id>wilson_two_flav</monomial_id>
+          <monomial_id>up_down_wilson</monomial_id>
         </NamedObject>
       </elem>
 
@@ -125,7 +127,9 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
         </FermionAction>
         <FermionActionPrec>
           <FermAct>PARWILSON</FermAct>
+          <!-- TODO Set m_ud = -0.1265. -->
           <Kappa>0.11</Kappa>
+          <!-- TODO This `H` needs to be tuned. -->
           <H>0.33</H>
           <FermionBC>
             <FermBC>SIMPLE_FERMBC</FermBC>
@@ -157,15 +161,9 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
 
     <Hamiltonian>
       <monomial_ids>
-        <elem>wilson_two_flav</elem>
         <elem>gauge</elem>
-        <!-- TODO In Carsten's [tutorial
-             file](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/hmc.four.xml),
-             the `hasen` monomial is not put into the Hamiltonian. Is it
-             correct to leave it out because it does not contain any new
-             physics and is not used to compute the energy (in the
-             accept/reject perhaps)? Or would it have to be included because
-             this is the guidance Hamiltonian on the molecular dynamics? -->
+        <elem>up_down_wilson</elem>
+        <elem>up_down_hasenbusch</elem>
       </monomial_ids>
     </Hamiltonian>
 
@@ -180,7 +178,7 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
              trajectory length be in the order of unity? -->
         <n_steps>25</n_steps>
         <monomial_ids>
-          <elem>wilson_two_flav</elem>
+          <elem>up_down_wilson</elem>
         </monomial_ids>
         <!-- TODO This subintegrator is just an example, probably we want to
              have much more stuff. -->
