@@ -75,7 +75,9 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
                 numerically as that would certainly introduce roundoff errors,
                 perhaps it should be something like `1.0` in the directions
                 that we want to have the twisted boundary conditions? -->
-            <boundary>0 0 0 pi</boundary>
+            <boundary>1 1 1 1</boundary>
+            <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
+            <phases_dir>1 1 1</phases_dir>
           </FermionBC>
         </FermionAction>
         <ChronologicalPredictor>
