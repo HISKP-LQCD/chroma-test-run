@@ -25,9 +25,9 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
     <!-- TODO How man trajectories do we want? -->
     <StartUpdateNum>0</StartUpdateNum>
     <NWarmUpUpdates>0</NWarmUpUpdates>
-    <NProductionUpdates>40</NProductionUpdates>
-    <NUpdatesThisRun>40</NUpdatesThisRun>
-    <SaveInterval>10</SaveInterval>
+    <NProductionUpdates>2</NProductionUpdates>
+    <NUpdatesThisRun>2</NUpdatesThisRun>
+    <SaveInterval>1</SaveInterval>
 
     <!-- This probably generates a single LIME file for everything. -->
     <SavePrefix>testrun</SavePrefix>
