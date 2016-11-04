@@ -62,7 +62,7 @@
         </NamedObject>
       </elem><!--}}}-->
 
-      <!-- (up_down_hasenbusch_1) Wilson + clover: up, down; degenerate {{{ -->
+      <!-- (up_down_hasenbusch_1) Wilson + clover: up, down {{{ -->
       <elem>
         <Name>TWO_FLAVOR_EOPREC_CONSTDET_RATIO_CONV_CONV_FERM_MONOMIAL</Name>
         <Action>
@@ -120,7 +120,7 @@
         </NamedObject>
       </elem><!--}}}-->
 
-      <!-- (up_down_hasenbusch_last) Wilson + clover: up, down; degenerate {{{ -->
+      <!-- (up_down_hasenbusch_last) Wilson + clover: up, down {{{ -->
       <elem>
         <Name>TWO_FLAVOR_EOPREC_CONSTDET_FERM_MONOMIAL</Name>
         <InvertParam>
@@ -156,6 +156,40 @@
         </NamedObject>
       </elem><!--}}}-->
 
+      <!-- (up_down_clover) Clover even-even: up, down {{{ -->
+      <elem>
+        <Name>N_FLAVOR_LOGDET_EVEN_EVEN_FERM_MONOMIAL</Name>
+        <FermionAction>
+          <FermAct>CLOVER</FermAct>
+          <Mass>-0.1265</Mass>
+          <clovCoeff>1.24930970916466</clovCoeff>
+          <!--
+          <ZeroEnergy>0</ZeroEnergy>
+          <AnisoParam>
+            <anisoP>false</anisoP>
+            <t_dir>3</t_dir>
+            <xi_0>1</xi_0>
+            <nu>1</nu>
+          </AnisoParam>
+-->
+          <FermState>
+            <Name>STOUT_FERM_STATE</Name>
+            <rho>1.0</rho>
+            <n_smear>6</n_smear>
+            <FermionBC>
+              <FermBC>TWISTED_FERMBC</FermBC>
+              <boundary>1 1 1 1</boundary>
+              <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
+              <phases_dir>1 1 1</phases_dir>
+            </FermionBC>
+          </FermState>
+        </FermionAction>
+        <num_flavors>2</num_flavors>
+        <NamedObject>
+          <monomial_id>up_down_clover</monomial_id>
+        </NamedObject>
+      </elem><!--}}}-->
+
       <!-- (strange) Wilson + clover: strange {{{ -->
       <elem>
         <Name>ONE_FLAVOR_EOPREC_CONSTDET_FERM_RAT_MONOMIAL</Name>
@@ -166,7 +200,7 @@
         </InvertParam>
         <FermionAction>
           <FermAct>CLOVER</FermAct>
-          <Mass>-0.1265</Mass>
+          <Mass>-0.057</Mass>
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
             <rho>1.0</rho>
@@ -183,7 +217,42 @@
           <Name>LAST_SOLUTION_4D_PREDICTOR</Name>
         </ChronologicalPredictor>
         <NamedObject>
-          <monomial_id>up_down_hasenbusch_last</monomial_id>
+          <monomial_id>strange</monomial_id>
+        </NamedObject>
+      </elem><!--}}}-->
+
+
+      <!-- (strange_clover) Clover even-even: strange {{{ -->
+      <elem>
+        <Name>N_FLAVOR_LOGDET_EVEN_EVEN_FERM_MONOMIAL</Name>
+        <FermionAction>
+          <FermAct>CLOVER</FermAct>
+          <Mass>-0.057</Mass>
+          <clovCoeff>1.24930970916466</clovCoeff>
+          <!--
+          <ZeroEnergy>0</ZeroEnergy>
+          <AnisoParam>
+            <anisoP>false</anisoP>
+            <t_dir>3</t_dir>
+            <xi_0>1</xi_0>
+            <nu>1</nu>
+          </AnisoParam>
+-->
+          <FermState>
+            <Name>STOUT_FERM_STATE</Name>
+            <rho>1.0</rho>
+            <n_smear>6</n_smear>
+            <FermionBC>
+              <FermBC>TWISTED_FERMBC</FermBC>
+              <boundary>1 1 1 1</boundary>
+              <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
+              <phases_dir>1 1 1</phases_dir>
+            </FermionBC>
+          </FermState>
+        </FermionAction>
+        <num_flavors>1</num_flavors>
+        <NamedObject>
+          <monomial_id>strange_clover</monomial_id>
         </NamedObject>
       </elem><!--}}}-->
 
