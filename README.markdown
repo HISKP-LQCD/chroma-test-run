@@ -92,6 +92,18 @@ parameters.
 
 The same applies to the approximation of the force in `ForceApprox`.
 
+### Running with Multiple Threads
+
+So far this runs with only one thread on my local machine. I have build the
+`scalar` version and not the `parscalar` version. From what I understand, the
+`parscalar` is for clusters whereas `scalar` is for shared memory workstations.
+There is the `-geom px py pz pt` option for `hmc` which apparently does not
+magically parallelize to 4 threads when I run it with `hmc … -geom 1 1 1 4` on
+my laptop.
+
+We need to know how to run this on a certain number of clusters (MPI like) with
+a certain number of threads (OpenMP like) for a test run on a supercomputer.
+
 ## Notes
 
 ### CONV
