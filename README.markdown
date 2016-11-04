@@ -89,6 +89,8 @@ root, so it should be `-1/2`, right?
 An alternative to `READ_COEFFS` is `REMEZ` which also needs a couple of
 parameters.
 
+The same applies to the approximation of the force in `ForceApprox`.
+
 ## Notes
 
 ### CONV
