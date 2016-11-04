@@ -6,7 +6,7 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
 Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
 -->
 <Params>
-  <MCControl>
+  <MCControl><!--{{{-->
 
     <Cfg>
       <!-- TODO What type of configuration do we want to start with, `UNIT` (cold) or `DISORDERED` (hot) or `WEAK_FIELD` (no idea) perhaps? -->
@@ -48,12 +48,28 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
         </NamedObject>
       </elem>
     </InlineMeasurements>
-  </MCControl>
+  </MCControl><!--}}}-->
 
   <HMCTrj>
     <Monomials>
+      <!-- Gauge -->
+      <elem><!--{{{-->
+        <!-- Tree level Symanzik improved gauge, here it is called Lüscher-Weiß. The β is set to the value from the paper. -->
+        <Name>GAUGE_MONOMIAL</Name>
+        <GaugeAction>
+          <Name>LW_TREE_GAUGEACT</Name>
+          <beta>3.3</beta>
+          <GaugeBC>
+            <Name>PERIODIC_GAUGEBC</Name>
+          </GaugeBC>
+        </GaugeAction>
+        <NamedObject>
+          <monomial_id>gauge</monomial_id>
+        </NamedObject>
+      </elem><!--}}}-->
+
       <!-- Quarks: up, down; degenerate -->
-      <elem>
+      <elem><!--{{{-->
         <Name>TWO_FLAVOR_EOPREC_CONSTDET_FERM_MONOMIAL</Name>
         <InvertParam>
           <!-- TODO The only ones with `MULTIGRID` in their name seem to be the `QOP_CLOVER_MULTIGRID_INVERTER` and the various `QUDA` ones. -->
@@ -93,10 +109,10 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
         <NamedObject>
           <monomial_id>up_down_wilson</monomial_id>
         </NamedObject>
-      </elem>
+      </elem><!--}}}-->
 
       <!-- Quarks: strange -->
-      <elem>
+      <elem><!--{{{-->
         <Name>TWO_FLAVOR_EOPREC_CONSTDET_FERM_MONOMIAL</Name>
         <InvertParam>
           <!-- TODO The only ones with `MULTIGRID` in their name seem to be the `QOP_CLOVER_MULTIGRID_INVERTER` and the various `QUDA` ones. -->
@@ -120,10 +136,10 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
         <NamedObject>
           <monomial_id>strange_wilson</monomial_id>
         </NamedObject>
-      </elem>
+      </elem><!--}}}-->
 
       <!-- Clover: up, down -->
-      <elem>
+      <elem><!--{{{-->
         <!-- The clover term depends on the Gauge fields in the even-even term, so we cannot use `CONSTDET` but must use `LOGDET`. Is that correct? -->
         <Name>TWO_FLAVOR_EOPREC_LOGDET_FERM_MONOMIAL</Name>
         <InvertParam>
@@ -165,12 +181,10 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
         <NamedObject>
           <monomial_id>up_down_clover</monomial_id>
         </NamedObject>
-      </elem>
+      </elem><!--}}}-->
 
       <!-- Hasenbusch term for up and down quarks. -->
-      <!-- FIXME This is not available in Chroma any more, it must have been named differently at some point between 2008 and 2016. -->
-      <annotation>
-      <elem>
+      <elem><!--{{{-->
         <Name>TWO_FLAVOR_EOPREC_CONSTDET_HASENBUSCH_FERM_MONOMIAL</Name>
         <InvertParam>
           <invType>CG_INVERTER</invType>
@@ -199,23 +213,8 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
           <Name>ZERO_GUESS_4D_PREDICTOR</Name>
         </ChronologicalPredictor>
         <NamedObject><monomial_id>hasen</monomial_id></NamedObject>
-      </elem>
-      </annotation>
+      </elem><!--}}}-->
 
-      <!-- The gauge action should be just fine, the β is set to the value from the paper. -->
-      <elem>
-        <Name>GAUGE_MONOMIAL</Name>
-        <GaugeAction>
-          <Name>WILSON_GAUGEACT</Name>
-          <beta>3.3</beta>
-          <GaugeBC>
-            <Name>PERIODIC_GAUGEBC</Name>
-          </GaugeBC>
-        </GaugeAction>
-        <NamedObject>
-          <monomial_id>gauge</monomial_id>
-        </NamedObject>
-      </elem>
     </Monomials>
 
     <Hamiltonian>
@@ -261,4 +260,4 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
 
 </Params>
 
-<!-- vim: set sw=2 et : -->
+<!-- vim: set foldmethod=marker foldcolumn=1 sw=2 et : -->
