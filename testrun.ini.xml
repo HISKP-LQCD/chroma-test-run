@@ -200,21 +200,23 @@
           <RsdCG>1.0e-12</RsdCG>
           <MaxCG>1000</MaxCG>
         </InvertParam>
-        <FermionAction>
-          <FermAct>CLOVER</FermAct>
-          <Mass>-0.057</Mass>
-          <FermState>
-            <Name>STOUT_FERM_STATE</Name>
-            <rho>1.0</rho>
-            <n_smear>6</n_smear>
-            <FermionBC>
-              <FermBC>TWISTED_FERMBC</FermBC>
-              <boundary>1 1 1 1</boundary>
-              <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
-              <phases_dir>1 1 1</phases_dir>
-            </FermionBC>
-          </FermState>
-        </FermionAction>
+        <Action>
+          <FermionAction>
+            <FermAct>CLOVER</FermAct>
+            <Mass>-0.057</Mass>
+            <FermState>
+              <Name>STOUT_FERM_STATE</Name>
+              <rho>1.0</rho>
+              <n_smear>6</n_smear>
+              <FermionBC>
+                <FermBC>TWISTED_FERMBC</FermBC>
+                <boundary>1 1 1 1</boundary>
+                <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
+                <phases_dir>1 1 1</phases_dir>
+              </FermionBC>
+            </FermState>
+          </FermionAction>
+        </Action>
         <ChronologicalPredictor>
           <Name>LAST_SOLUTION_4D_PREDICTOR</Name>
         </ChronologicalPredictor>
