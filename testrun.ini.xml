@@ -70,7 +70,8 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
 
       <!-- (up_down_hasenbusch_1) Quarks: up, down; degenerate {{{ -->
       <elem>
-        <Name>TWO_FLAVOR_EOPREC_CONSTDET_FERM_MONOMIAL</Name>
+        <!-- TODO We are not sure what `CONV` means. Casten's guess is “conventional” which is a good contrast to “ratio”. -->
+        <Name>TWO_FLAVOR_EOPREC_CONSTDET_FERM_RATIO_CONV_CONV_MONOMIAL</Name>
         <InvertParam>
           <!-- TODO The only ones with `MULTIGRID` in their name seem to be the `QOP_CLOVER_MULTIGRID_INVERTER` and the various `QUDA` ones. -->
           <invType>CG_INVERTER</invType>
@@ -78,6 +79,7 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
           <MaxCG>1000</MaxCG>
         </InvertParam>
         <FermionAction>
+          <!-- This is the numerator. -->
           <FermAct>WILSON</FermAct>
           <Mass>-0.1265</Mass>
           <FermionBC>
@@ -103,6 +105,106 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
             </FermionBC>
           </FermState>
         </FermionAction>
+        <FermionActionPrec>
+          <!-- This is the denominator. -->
+          <FermAct>WILSON</FermAct>
+          <Mass>-0.1265</Mass>
+          <FermionBC>
+            <FermBC>TWISTED_FERMBC</FermBC>
+            <!-- TODO Bartek said that we want twisted boundary conditions? From the source code I gathered that we need an `int`-array `boundary`, a `Real`-array `phases_by_pi` and another `int`-array `phases_dir`. I do not want to include pi numerically as that would certainly introduce roundoff errors, perhaps it should be something like `1.0` in the directions that we want to have the twisted boundary conditions? -->
+            <boundary>1 1 1 1</boundary>
+            <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
+            <phases_dir>1 1 1</phases_dir>
+          </FermionBC>
+          <!-- TODO I am not sure how `FermionAction`, `FermState` and `FermionBC` have to be nested. This way the `hmc` runs through. I am not sure whether the data generated makes any sense, though. -->
+          <FermState>
+            <Name>STOUT_FERM_STATE</Name>
+            <!-- TODO Set a sensible ρ. -->
+            <rho>1.0</rho>
+            <n_smear>6</n_smear>
+            <!-- One can add `orthog_dir` to smear in certain directions. -->
+            <FermionBC>
+              <!-- TODO Do those boundary conditions have to be the same? Do they have to be something different? -->
+              <FermBC>TWISTED_FERMBC</FermBC>
+              <boundary>1 1 1 1</boundary>
+              <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
+              <phases_dir>1 1 1</phases_dir>
+            </FermionBC>
+          </FermState>
+        </FermionActionPrec>
+        <ChronologicalPredictor>
+          <Name>LAST_SOLUTION_4D_PREDICTOR</Name>
+        </ChronologicalPredictor>
+        <NamedObject>
+          <monomial_id>up_down_hasenbusch_1</monomial_id>
+        </NamedObject>
+      </elem><!--}}}-->
+
+      <!-- TODO Repeat the Hasenbusch term as often as desired -->
+
+      <!-- (up_down_hasenbusch_last) Quarks: up, down; degenerate {{{ -->
+      <elem>
+        <Name>TWO_FLAVOR_EOPREC_CONSTDET_FERM_MONOMIAL</Name>
+        <InvertParam>
+          <!-- TODO The only ones with `MULTIGRID` in their name seem to be the `QOP_CLOVER_MULTIGRID_INVERTER` and the various `QUDA` ones. -->
+          <invType>CG_INVERTER</invType>
+          <RsdCG>1.0e-12</RsdCG>
+          <MaxCG>1000</MaxCG>
+        </InvertParam>
+        <FermionAction>
+          <!-- This is the numerator. -->
+          <FermAct>WILSON</FermAct>
+          <Mass>-0.1265</Mass>
+          <FermionBC>
+            <FermBC>TWISTED_FERMBC</FermBC>
+            <!-- TODO Bartek said that we want twisted boundary conditions? From the source code I gathered that we need an `int`-array `boundary`, a `Real`-array `phases_by_pi` and another `int`-array `phases_dir`. I do not want to include pi numerically as that would certainly introduce roundoff errors, perhaps it should be something like `1.0` in the directions that we want to have the twisted boundary conditions? -->
+            <boundary>1 1 1 1</boundary>
+            <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
+            <phases_dir>1 1 1</phases_dir>
+          </FermionBC>
+          <!-- TODO I am not sure how `FermionAction`, `FermState` and `FermionBC` have to be nested. This way the `hmc` runs through. I am not sure whether the data generated makes any sense, though. -->
+          <FermState>
+            <Name>STOUT_FERM_STATE</Name>
+            <!-- TODO Set a sensible ρ. -->
+            <rho>1.0</rho>
+            <n_smear>6</n_smear>
+            <!-- One can add `orthog_dir` to smear in certain directions. -->
+            <FermionBC>
+              <!-- TODO Do those boundary conditions have to be the same? Do they have to be something different? -->
+              <FermBC>TWISTED_FERMBC</FermBC>
+              <boundary>1 1 1 1</boundary>
+              <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
+              <phases_dir>1 1 1</phases_dir>
+            </FermionBC>
+          </FermState>
+        </FermionAction>
+        <FermionActionPrec>
+          <!-- This is the denominator. -->
+          <FermAct>WILSON</FermAct>
+          <Mass>-0.1265</Mass>
+          <FermionBC>
+            <FermBC>TWISTED_FERMBC</FermBC>
+            <!-- TODO Bartek said that we want twisted boundary conditions? From the source code I gathered that we need an `int`-array `boundary`, a `Real`-array `phases_by_pi` and another `int`-array `phases_dir`. I do not want to include pi numerically as that would certainly introduce roundoff errors, perhaps it should be something like `1.0` in the directions that we want to have the twisted boundary conditions? -->
+            <boundary>1 1 1 1</boundary>
+            <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
+            <phases_dir>1 1 1</phases_dir>
+          </FermionBC>
+          <!-- TODO I am not sure how `FermionAction`, `FermState` and `FermionBC` have to be nested. This way the `hmc` runs through. I am not sure whether the data generated makes any sense, though. -->
+          <FermState>
+            <Name>STOUT_FERM_STATE</Name>
+            <!-- TODO Set a sensible ρ. -->
+            <rho>1.0</rho>
+            <n_smear>6</n_smear>
+            <!-- One can add `orthog_dir` to smear in certain directions. -->
+            <FermionBC>
+              <!-- TODO Do those boundary conditions have to be the same? Do they have to be something different? -->
+              <FermBC>TWISTED_FERMBC</FermBC>
+              <boundary>1 1 1 1</boundary>
+              <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
+              <phases_dir>1 1 1</phases_dir>
+            </FermionBC>
+          </FermState>
+        </FermionActionPrec>
         <ChronologicalPredictor>
           <Name>LAST_SOLUTION_4D_PREDICTOR</Name>
         </ChronologicalPredictor>
@@ -121,10 +223,8 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
           <MaxCG>1000</MaxCG>
         </InvertParam>
         <FermionAction>
-          <FermAct>PARWILSON</FermAct>
+          <FermAct>CLOVER</FermAct>
           <Mass>-0.057</Mass>
-          <!-- TODO This `H` needs to be tuned. -->
-          <H>0.33</H>
           <FermionBC>
             <FermBC>SIMPLE_FERMBC</FermBC>
             <boundary>1 1 1 -1</boundary>
@@ -181,38 +281,6 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
         <NamedObject>
           <monomial_id>up_down_clover</monomial_id>
         </NamedObject>
-      </elem><!--}}}-->
-
-      <!-- Hasenbusch term for up and down quarks. -->
-      <elem><!--{{{-->
-        <Name>TWO_FLAVOR_EOPREC_CONSTDET_HASENBUSCH_FERM_MONOMIAL</Name>
-        <InvertParam>
-          <invType>CG_INVERTER</invType>
-          <RsdCG>1.0e-07</RsdCG>
-          <MaxCG>1000</MaxCG>
-        </InvertParam>
-        <FermionAction>
-          <FermAct>WILSON</FermAct>
-          <Mass>-0.1265</Mass>
-          <FermionBC>
-            <FermBC>SIMPLE_FERMBC</FermBC>
-            <boundary>1 1 1 -1</boundary>
-          </FermionBC>
-        </FermionAction>
-        <FermionActionPrec>
-          <FermAct>PARWILSON</FermAct>
-          <Mass>-0.1265</Mass>
-          <!-- TODO This `H` needs to be tuned. -->
-          <H>0.33</H>
-          <FermionBC>
-            <FermBC>SIMPLE_FERMBC</FermBC>
-            <boundary>1 1 1 -1</boundary>
-          </FermionBC>
-        </FermionActionPrec>
-        <ChronologicalPredictor>
-          <Name>ZERO_GUESS_4D_PREDICTOR</Name>
-        </ChronologicalPredictor>
-        <NamedObject><monomial_id>hasen</monomial_id></NamedObject>
       </elem><!--}}}-->
 
     </Monomials>
