@@ -127,23 +127,19 @@
       <elem>
         <Name>TWO_FLAVOR_EOPREC_CONSTDET_FERM_MONOMIAL</Name>
         <InvertParam>
-          <!-- TODO The only ones with `MULTIGRID` in their name seem to be the `QOP_CLOVER_MULTIGRID_INVERTER` and the various `QUDA` ones. -->
           <invType>CG_INVERTER</invType>
           <RsdCG>1.0e-12</RsdCG>
           <MaxCG>1000</MaxCG>
         </InvertParam>
         <FermionAction>
           <FermAct>CLOVER</FermAct>
-          <!-- TODO -->
           <Mass>-0.1265</Mass>
+          <clovCoeff>1.24930970916466</clovCoeff>
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
-            <!-- TODO Set a sensible ρ. -->
             <rho>1.0</rho>
             <n_smear>6</n_smear>
-            <!-- One can add `orthog_dir` to smear in certain directions. -->
             <FermionBC>
-              <!-- TODO -->
               <FermBC>TWISTED_FERMBC</FermBC>
               <boundary>1 1 1 1</boundary>
               <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
@@ -206,6 +202,7 @@
           <FermionAction>
             <FermAct>CLOVER</FermAct>
             <Mass>-0.057</Mass>
+            <clovCoeff>1.24930970916466</clovCoeff>
             <FermState>
               <Name>STOUT_FERM_STATE</Name>
               <rho>1.0</rho>
