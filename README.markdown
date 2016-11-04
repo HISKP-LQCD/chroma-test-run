@@ -31,6 +31,9 @@ The stout smearing is configured to six times. One still needs to specify a
 sensible value of ρ.
 
 One can add `orthog_dir` to smear in certain directions. Do we need that?
+Without this in the input file, `hmc` outputs:
+
+    Using Default value: orthog_dir = 3, spatial only smearing
 
 ### Inverter
 
