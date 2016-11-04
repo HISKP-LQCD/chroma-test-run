@@ -73,6 +73,11 @@ Are there any particular things that we want to measure in-line during the HMC?
 The `LW_TREE_GAUGEACT` needs another parameter `u0`. I have copied the value
 from Tom's script. I haven't understood what this value is for, though.
 
+### Clover Coefficient
+
+The clover coefficient is just copied from Tom's script. Is that the numerical
+value that we want to use?
+
 ## Notes
 
 ### CONV
