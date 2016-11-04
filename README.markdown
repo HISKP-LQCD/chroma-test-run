@@ -61,6 +61,10 @@ The gauge part is integrated twice in each time step. All fermionic parts are
 integrated on the coarsest time scale at the moment. We probably want to
 integrate the various Hasenbusch terms on different scales.
 
+### Inline Measurements
+
+Are there any particular things that we want to measure in-line during the HMC?
+
 ## Notes
 
 ### CONV
