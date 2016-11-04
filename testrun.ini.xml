@@ -1,10 +1,4 @@
 <?xml version="1.0"?>
-<!--
-Chroma `hmc` input file. It is based on [Carsten's `hmc`
-tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
-
-Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
--->
 <Params>
   <MCControl><!--{{{-->
 
@@ -68,29 +62,25 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
         </NamedObject>
       </elem><!--}}}-->
 
-      <!-- (up_down_hasenbusch_1) Quarks: up, down; degenerate {{{ -->
+      <!-- (up_down_hasenbusch_1) Wilson + clover: up, down; degenerate {{{ -->
       <elem>
-        <!-- We are not sure what `CONV` means. Casten's guess is “conventional” which is a good contrast to “ratio”. In Tom's example, also `CONV_CONV` is used for a Hasenbusch term. That should be fine as is. -->
         <Name>TWO_FLAVOR_EOPREC_CONSTDET_RATIO_CONV_CONV_FERM_MONOMIAL</Name>
         <Action>
           <!-- This is the numerator. -->
           <InvertParam>
-            <!-- TODO The only ones with `MULTIGRID` in their name seem to be the `QOP_CLOVER_MULTIGRID_INVERTER` and the various `QUDA` ones. -->
             <invType>CG_INVERTER</invType>
             <RsdCG>1.0e-12</RsdCG>
             <MaxCG>1000</MaxCG>
           </InvertParam>
           <FermionAction>
             <FermAct>WILSON</FermAct>
+            <!-- This particular mass is the desired one, so that should not be changed. -->
             <Mass>-0.1265</Mass>
             <FermState>
               <Name>STOUT_FERM_STATE</Name>
-              <!-- TODO Set a sensible ρ. -->
               <rho>1.0</rho>
               <n_smear>6</n_smear>
-              <!-- One can add `orthog_dir` to smear in certain directions. -->
               <FermionBC>
-                <!-- TODO Bartek said that we want twisted boundary conditions? From the source code I gathered that we need an `int`-array `boundary`, a `Real`-array `phases_by_pi` and another `int`-array `phases_dir`. I do not want to include pi numerically as that would certainly introduce roundoff errors, perhaps it should be something like `1.0` in the directions that we want to have the twisted boundary conditions? -->
                 <FermBC>TWISTED_FERMBC</FermBC>
                 <boundary>1 1 1 1</boundary>
                 <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
@@ -111,12 +101,9 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
             <Mass>-0.1265</Mass>
             <FermState>
               <Name>STOUT_FERM_STATE</Name>
-              <!-- TODO Set a sensible ρ. -->
               <rho>1.0</rho>
               <n_smear>6</n_smear>
-              <!-- One can add `orthog_dir` to smear in certain directions. -->
               <FermionBC>
-                <!-- TODO Do those boundary conditions have to be the same? Do they have to be something different? -->
                 <FermBC>TWISTED_FERMBC</FermBC>
                 <boundary>1 1 1 1</boundary>
                 <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
@@ -135,7 +122,7 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
 
       <!-- TODO Repeat the Hasenbusch term as often as desired -->
 
-      <!-- (up_down_hasenbusch_last) Quarks: up, down; degenerate {{{ -->
+      <!-- (up_down_hasenbusch_last) Wilson + clover: up, down; degenerate {{{ -->
       <elem>
         <Name>TWO_FLAVOR_EOPREC_CONSTDET_FERM_MONOMIAL</Name>
         <InvertParam>
@@ -146,6 +133,7 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
         </InvertParam>
         <FermionAction>
           <FermAct>WILSON</FermAct>
+          <!-- TODO -->
           <Mass>-0.1265</Mass>
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
@@ -170,73 +158,37 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
         </NamedObject>
       </elem><!--}}}-->
 
-      <!-- (strange) Quarks: strange {{{ -->
+      <!-- (strange) Wilson + clover: strange {{{ -->
       <elem>
         <Name>ONE_FLAVOR_EOPREC_CONSTDET_FERM_RAT_MONOMIAL</Name>
         <InvertParam>
-          <!-- TODO The only ones with `MULTIGRID` in their name seem to be the `QOP_CLOVER_MULTIGRID_INVERTER` and the various `QUDA` ones. -->
           <invType>CG_INVERTER</invType>
           <RsdCG>1.0e-12</RsdCG>
           <MaxCG>1000</MaxCG>
         </InvertParam>
         <FermionAction>
           <FermAct>CLOVER</FermAct>
-          <Mass>-0.057</Mass>
-          <FermionBC>
-            <FermBC>SIMPLE_FERMBC</FermBC>
-            <boundary>1 1 1 -1</boundary>
-          </FermionBC>
-        </FermionAction>
-        <ChronologicalPredictor>
-          <Name>LAST_SOLUTION_4D_PREDICTOR</Name>
-        </ChronologicalPredictor>
-        <NamedObject>
-          <monomial_id>strange</monomial_id>
-        </NamedObject>
-      </elem><!--}}}-->
-
-      <!-- Clover: up, down -->
-      <elem><!--{{{-->
-        <!-- The clover term depends on the Gauge fields in the even-even term, so we cannot use `CONSTDET` but must use `LOGDET`. Is that correct? -->
-        <Name>TWO_FLAVOR_EOPREC_LOGDET_FERM_MONOMIAL</Name>
-        <InvertParam>
-          <!-- TODO The only ones with `MULTIGRID` in their name seem to be the `QOP_CLOVER_MULTIGRID_INVERTER` and the various `QUDA` ones. -->
-          <invType>CG_INVERTER</invType>
-          <RsdCG>1.0e-12</RsdCG>
-          <MaxCG>1000</MaxCG>
-        </InvertParam>
-        <FermionAction>
-          <FermAct>CLOVER</FermAct>
+          <!-- TODO -->
           <Mass>-0.1265</Mass>
-          <!-- In Duerr-2009-Scaling_Study_of_Dynamically_Smeared-Link_Clover_Fermions they use c_{SW} = 1, so I do it here as well. -->
-          <clovCoeff>1.0</clovCoeff>
-          <FermionBC>
-            <!-- TODO What about boundary conditions here? -->
-            <FermBC>TWISTED_FERMBC</FermBC>
-            <boundary>1 1 1 1</boundary>
-            <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
-            <phases_dir>1 1 1</phases_dir>
-          </FermionBC>
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
             <!-- TODO Set a sensible ρ. -->
             <rho>1.0</rho>
             <n_smear>6</n_smear>
-            <!-- One can add `orthog_dir` to smear in certain directions. -->
             <FermionBC>
-              <!-- TODO Do those boundary conditions have to be the same? Do they have to be something different? -->
+              <!-- TODO -->
               <FermBC>TWISTED_FERMBC</FermBC>
               <boundary>1 1 1 1</boundary>
               <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
               <phases_dir>1 1 1</phases_dir>
             </FermionBC>
           </FermState>
-        </FermionAction>
+          </FermionAction>
         <ChronologicalPredictor>
           <Name>LAST_SOLUTION_4D_PREDICTOR</Name>
         </ChronologicalPredictor>
         <NamedObject>
-          <monomial_id>up_down_clover</monomial_id>
+          <monomial_id>up_down_hasenbusch_last</monomial_id>
         </NamedObject>
       </elem><!--}}}-->
 
