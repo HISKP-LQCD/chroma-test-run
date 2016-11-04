@@ -260,4 +260,4 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
 
 </Params>
 
-<!-- vim: set foldmethod=marker foldcolumn=1 sw=2 et : -->
+<!-- vim: set foldcolumn=1 foldmethod=marker shiftwidth=2 expandtab : -->
