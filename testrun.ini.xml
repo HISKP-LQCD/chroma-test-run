@@ -145,17 +145,8 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
           <MaxCG>1000</MaxCG>
         </InvertParam>
         <FermionAction>
-          <!-- This is the numerator. -->
           <FermAct>WILSON</FermAct>
           <Mass>-0.1265</Mass>
-          <FermionBC>
-            <FermBC>TWISTED_FERMBC</FermBC>
-            <!-- TODO Bartek said that we want twisted boundary conditions? From the source code I gathered that we need an `int`-array `boundary`, a `Real`-array `phases_by_pi` and another `int`-array `phases_dir`. I do not want to include pi numerically as that would certainly introduce roundoff errors, perhaps it should be something like `1.0` in the directions that we want to have the twisted boundary conditions? -->
-            <boundary>1 1 1 1</boundary>
-            <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
-            <phases_dir>1 1 1</phases_dir>
-          </FermionBC>
-          <!-- TODO I am not sure how `FermionAction`, `FermState` and `FermionBC` have to be nested. This way the `hmc` runs through. I am not sure whether the data generated makes any sense, though. -->
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
             <!-- TODO Set a sensible ρ. -->
@@ -163,46 +154,19 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
             <n_smear>6</n_smear>
             <!-- One can add `orthog_dir` to smear in certain directions. -->
             <FermionBC>
-              <!-- TODO Do those boundary conditions have to be the same? Do they have to be something different? -->
+              <!-- TODO -->
               <FermBC>TWISTED_FERMBC</FermBC>
               <boundary>1 1 1 1</boundary>
               <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
               <phases_dir>1 1 1</phases_dir>
             </FermionBC>
           </FermState>
-        </FermionAction>
-        <FermionActionPrec>
-          <!-- This is the denominator. -->
-          <FermAct>WILSON</FermAct>
-          <Mass>-0.1265</Mass>
-          <FermionBC>
-            <FermBC>TWISTED_FERMBC</FermBC>
-            <!-- TODO Bartek said that we want twisted boundary conditions? From the source code I gathered that we need an `int`-array `boundary`, a `Real`-array `phases_by_pi` and another `int`-array `phases_dir`. I do not want to include pi numerically as that would certainly introduce roundoff errors, perhaps it should be something like `1.0` in the directions that we want to have the twisted boundary conditions? -->
-            <boundary>1 1 1 1</boundary>
-            <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
-            <phases_dir>1 1 1</phases_dir>
-          </FermionBC>
-          <!-- TODO I am not sure how `FermionAction`, `FermState` and `FermionBC` have to be nested. This way the `hmc` runs through. I am not sure whether the data generated makes any sense, though. -->
-          <FermState>
-            <Name>STOUT_FERM_STATE</Name>
-            <!-- TODO Set a sensible ρ. -->
-            <rho>1.0</rho>
-            <n_smear>6</n_smear>
-            <!-- One can add `orthog_dir` to smear in certain directions. -->
-            <FermionBC>
-              <!-- TODO Do those boundary conditions have to be the same? Do they have to be something different? -->
-              <FermBC>TWISTED_FERMBC</FermBC>
-              <boundary>1 1 1 1</boundary>
-              <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
-              <phases_dir>1 1 1</phases_dir>
-            </FermionBC>
-          </FermState>
-        </FermionActionPrec>
+          </FermionAction>
         <ChronologicalPredictor>
           <Name>LAST_SOLUTION_4D_PREDICTOR</Name>
         </ChronologicalPredictor>
         <NamedObject>
-          <monomial_id>up_down_hasenbusch_1</monomial_id>
+          <monomial_id>up_down_hasenbusch_last</monomial_id>
         </NamedObject>
       </elem><!--}}}-->
 
@@ -292,18 +256,16 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
       <!-- TODO Is that the desired timescale? -->
       <tau0>0.5</tau0>
       <Integrator>
-        <!-- TODO Is that a suitable integrator or do we want something fancier? -->
-        <Name>LCM_STS_LEAPFROG</Name>
+        <!-- TODO Is `STS` what we want? -->
+        <Name>LCM_STS_MIN_NORM_2</Name>
         <!-- TODO This would give a trajectory length of 12.5. Shouldn't the trajectory length be in the order of unity? -->
         <n_steps>25</n_steps>
         <monomial_ids>
-          <elem>up_down_wilson</elem>
-          <elem>up_down_clover</elem>
-          <elem>strange_wilson</elem>
+          <elem>up_down_hasenbusch_1</elem>
+          <elem>up_down_hasenbusch_last</elem>
         </monomial_ids>
-        <!-- TODO This subintegrator is just an example, probably we want to have much more stuff. -->
         <SubIntegrator>
-          <Name>LCM_STS_LEAPFROG</Name>
+          <Name>LCM_STS_MIN_NORM_2</Name>
           <n_steps>2</n_steps>
           <monomial_ids>
             <elem>gauge</elem>
