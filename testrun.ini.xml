@@ -194,6 +194,7 @@
       <!-- (strange) Wilson + clover: strange {{{ -->
       <elem>
         <Name>ONE_FLAVOR_EOPREC_CONSTDET_FERM_RAT_MONOMIAL</Name>
+        <num_pf>1</num_pf>
         <InvertParam>
           <invType>CG_INVERTER</invType>
           <RsdCG>1.0e-12</RsdCG>
