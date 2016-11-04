@@ -193,11 +193,6 @@
       <elem>
         <Name>ONE_FLAVOR_EOPREC_CONSTDET_FERM_RAT_MONOMIAL</Name>
         <num_pf>1</num_pf>
-        <InvertParam>
-          <invType>CG_INVERTER</invType>
-          <RsdCG>1.0e-12</RsdCG>
-          <MaxCG>1000</MaxCG>
-        </InvertParam>
         <Action>
           <FermionAction>
             <FermAct>CLOVER</FermAct>
@@ -216,6 +211,11 @@
             </FermState>
           </FermionAction>
           <ActionApprox>
+            <InvertParam>
+              <invType>CG_INVERTER</invType>
+              <RsdCG>1.0e-12</RsdCG>
+              <MaxCG>1000</MaxCG>
+            </InvertParam>
             <RationalApprox>
               <ratApproxType>READ_COEFFS</ratApproxType>
               <Param>
@@ -247,6 +247,43 @@
               </IPFECoeffs>
             </RationalApprox>
           </ActionApprox>
+          <ForceApprox>
+            <InvertParam>
+              <invType>CG_INVERTER</invType>
+              <RsdCG>1e-7 1e-7 1e-7 1e-8 1e-8 1e-8 1e-9 1e-9 1e-9 1e-9 1e-10 1e-10 1e-10 1e-10</RsdCG>
+              <MaxCG>5000</MaxCG>
+            </InvertParam>
+            <RationalApprox>
+              <ratApproxType>READ_COEFFS</ratApproxType>
+              <Param>
+                <annotation>
+                  Single strange Flavour, Force piece.
+                  power is -1/2
+                </annotation>
+                <lowerMin>1.0e-3</lowerMin>
+                <upperMax>33</upperMax>
+                <numPower>-1</numPower>
+                <denPower>2</denPower>
+                <degree>14</degree>
+              </Param>
+              <ApproxInfo>
+                <lowerMin>0.001</lowerMin>
+                <upperMax>33</upperMax>
+                <degree>14</degree>
+                <error>1.4743562084473e-09</error>
+              </ApproxInfo>
+              <PFECoeffs>
+                <norm>0.0251773260361138</norm>
+                <res>0.00938447081670725 0.0113556356385765 0.015712245775329 0.0233704650580646 0.0359432248979228 0.0560886542713153 0.0881062194115078 0.138988372319098 0.220476881003024 0.353893180549329 0.584538806469361 1.03738468679401 2.21944414498477 8.30625906187251</res>
+                <pole>5.25088256299576e-05 0.000541070967033193 0.00195024255755797 0.00552632726119316 0.0144330242366399 0.0365557187762636 0.091516089737837 0.22828194229081 0.570076879879339 1.43344757660573 3.67347605678986 9.89378007837651 30.5627463768969 149.277768177754</pole>
+              </PFECoeffs>
+              <IPFECoeffs>
+                <norm>39.7182766178435</norm>
+                <res>-2.23452961610184e-06 -1.42439478447941e-05 -6.35310799261578e-05 -0.00025967481522029 -0.00103247483279225 -0.00406693386569719 -0.0159884462327013 -0.0630641527026447 -0.251614273909366 -1.03436369354839 -4.58738368000716 -24.7646340755357 -232.527272190937 -20404.0362904484</res>
+                <pole>0.000221064398288062 0.00107974589695072 0.00333542889962994 0.00898331702448543 0.0230214209006101 0.0578869292278345 0.144558083170508 0.360592329660653 0.902731531609977 2.28642309878658 5.97141617575416 16.9209721488805 60.9901510349853 628.465778925603</pole>
+              </IPFECoeffs>
+            </RationalApprox>
+          </ForceApprox>
         </Action>
         <ChronologicalPredictor>
           <Name>LAST_SOLUTION_4D_PREDICTOR</Name>
