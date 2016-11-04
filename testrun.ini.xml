@@ -52,8 +52,8 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
 
   <HMCTrj>
     <Monomials>
-      <!-- Gauge -->
-      <elem><!--{{{-->
+      <!-- (gauge) Gauge {{{ -->
+      <elem>
         <!-- Tree level Symanzik improved gauge, here it is called Lüscher-Weiß. The β is set to the value from the paper. -->
         <Name>GAUGE_MONOMIAL</Name>
         <GaugeAction>
@@ -68,8 +68,8 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
         </NamedObject>
       </elem><!--}}}-->
 
-      <!-- Quarks: up, down; degenerate -->
-      <elem><!--{{{-->
+      <!-- (up_down_hasenbusch_1) Quarks: up, down; degenerate {{{ -->
+      <elem>
         <Name>TWO_FLAVOR_EOPREC_CONSTDET_FERM_MONOMIAL</Name>
         <InvertParam>
           <!-- TODO The only ones with `MULTIGRID` in their name seem to be the `QOP_CLOVER_MULTIGRID_INVERTER` and the various `QUDA` ones. -->
@@ -107,13 +107,13 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
           <Name>LAST_SOLUTION_4D_PREDICTOR</Name>
         </ChronologicalPredictor>
         <NamedObject>
-          <monomial_id>up_down_wilson</monomial_id>
+          <monomial_id>up_down_hasenbusch_1</monomial_id>
         </NamedObject>
       </elem><!--}}}-->
 
-      <!-- Quarks: strange -->
-      <elem><!--{{{-->
-        <Name>TWO_FLAVOR_EOPREC_CONSTDET_FERM_MONOMIAL</Name>
+      <!-- (strange) Quarks: strange {{{ -->
+      <elem>
+        <Name>ONE_FLAVOR_EOPREC_CONSTDET_FERM_RAT_MONOMIAL</Name>
         <InvertParam>
           <!-- TODO The only ones with `MULTIGRID` in their name seem to be the `QOP_CLOVER_MULTIGRID_INVERTER` and the various `QUDA` ones. -->
           <invType>CG_INVERTER</invType>
@@ -134,7 +134,7 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
           <Name>LAST_SOLUTION_4D_PREDICTOR</Name>
         </ChronologicalPredictor>
         <NamedObject>
-          <monomial_id>strange_wilson</monomial_id>
+          <monomial_id>strange</monomial_id>
         </NamedObject>
       </elem><!--}}}-->
 
@@ -217,7 +217,7 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
 
     </Monomials>
 
-    <Hamiltonian>
+    <Hamiltonian><!--{{{-->
       <monomial_ids>
         <elem>gauge</elem>
         <elem>up_down_wilson</elem>
@@ -225,9 +225,9 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
         <elem>strange_wilson</elem>
         <!-- <elem>up_down_hasenbusch</elem> -->
       </monomial_ids>
-    </Hamiltonian>
+    </Hamiltonian><!--}}}-->
 
-    <MDIntegrator>
+    <MDIntegrator><!--{{{-->
       <!-- TODO Is that the desired timescale? -->
       <tau0>0.5</tau0>
       <Integrator>
@@ -249,10 +249,9 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
           </monomial_ids>
         </SubIntegrator>
       </Integrator>
-    </MDIntegrator>
+    </MDIntegrator><!--}}}-->
 
     <!-- TODO Check that the time really goes last and not first. From the various tutorials it seems that the last value is special, that should be time. -->
-
     <!-- <nrow>24 24 24 64</nrow> -->
     <nrow>4 4 4 8</nrow>
 
@@ -260,4 +259,4 @@ Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
 
 </Params>
 
-<!-- vim: set foldcolumn=1 foldmethod=marker shiftwidth=2 expandtab : -->
+<!-- vim: set foldcolumn=1 foldlevel=0 foldmethod=marker shiftwidth=2 expandtab : -->
