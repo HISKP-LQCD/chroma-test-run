@@ -1,11 +1,12 @@
 # Chroma Test Run
 
-This is the input file for `hmc`. A first test run should 
+This is the input file for `hmc` to run something like a “smoke test”
+(switching it on and seeing if smoke comes out).
 
 Chroma `hmc` input file. It is based on [Carsten's `hmc`
-tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/).
-
-Also it contains snippets from Joo-2008-Guide_to_Writing_Chroma_XML_Files.
+tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/) and a file
+provided by Tom. It also contains snippets from
+`Joo-2008-Guide_to_Writing_Chroma_XML_Files`.
 
 ## Tasks
 
