@@ -120,8 +120,6 @@
         </NamedObject>
       </elem><!--}}}-->
 
-      <!-- TODO Repeat the Hasenbusch term as often as desired -->
-
       <!-- (up_down_hasenbusch_last) Wilson + clover: up, down; degenerate {{{ -->
       <elem>
         <Name>TWO_FLAVOR_EOPREC_CONSTDET_FERM_MONOMIAL</Name>
@@ -168,15 +166,12 @@
         </InvertParam>
         <FermionAction>
           <FermAct>CLOVER</FermAct>
-          <!-- TODO -->
           <Mass>-0.1265</Mass>
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
-            <!-- TODO Set a sensible ρ. -->
             <rho>1.0</rho>
             <n_smear>6</n_smear>
             <FermionBC>
-              <!-- TODO -->
               <FermBC>TWISTED_FERMBC</FermBC>
               <boundary>1 1 1 1</boundary>
               <phases_by_pi>1.0 1.0 1.0</phases_by_pi>

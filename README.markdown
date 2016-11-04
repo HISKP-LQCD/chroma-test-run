@@ -37,6 +37,10 @@ One can add `orthog_dir` to smear in certain directions. Do we need that?
 The only inverters with `MULTIGRID` in their name seem to be the
 `QOP_CLOVER_MULTIGRID_INVERTER` and the various `QUDA` ones.
 
+### Predictor
+
+Tom's example does not contain predictors. Do we want to use one?
+
 ## Notes
 
 ### CONV
