@@ -41,6 +41,9 @@ Without this in the input file, `hmc` outputs:
 The only inverters with `MULTIGRID` in their name seem to be the
 `QOP_CLOVER_MULTIGRID_INVERTER` and the various `QUDA` ones.
 
+The various inverters used have different precision, this should perhaps be
+unified somehow?
+
 ### Predictor
 
 Tom's example does not contain predictors. Do we want to use one?
