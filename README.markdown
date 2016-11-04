@@ -78,6 +78,17 @@ from Tom's script. I haven't understood what this value is for, though.
 The clover coefficient is just copied from Tom's script. Is that the numerical
 value that we want to use?
 
+### Action Approximation
+
+For the strange quark we need to take the square root and have chosen to use a
+rational approximation. Tom has used `READ_COEFFS`. For this `hmc` needs a lot
+of additional parameters, it seems. I have copied all the coefficients from
+Tom's script. The power there is `-1/4` which seems a bit odd. We want a square
+root, so it should be `-1/2`, right?
+
+An alternative to `READ_COEFFS` is `REMEZ` which also needs a couple of
+parameters.
+
 ## Notes
 
 ### CONV
