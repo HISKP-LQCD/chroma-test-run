@@ -53,6 +53,7 @@
         <GaugeAction>
           <Name>LW_TREE_GAUGEACT</Name>
           <beta>3.3</beta>
+          <u0>0.832605301399891</u0>
           <GaugeBC>
             <Name>PERIODIC_GAUGEBC</Name>
           </GaugeBC>

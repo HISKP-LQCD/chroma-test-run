@@ -65,6 +65,11 @@ integrate the various Hasenbusch terms on different scales.
 
 Are there any particular things that we want to measure in-line during the HMC?
 
+### `u0` Parameter in Gauge Action
+
+The `LW_TREE_GAUGEACT` needs another parameter `u0`. I have copied the value
+from Tom's script. I haven't understood what this value is for, though.
+
 ## Notes
 
 ### CONV
