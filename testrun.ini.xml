@@ -278,6 +278,9 @@
         <monomial_ids>
           <elem>up_down_hasenbusch_1</elem>
           <elem>up_down_hasenbusch_last</elem>
+          <elem>up_down_clover</elem>
+          <elem>strange</elem>
+          <elem>strange_clover</elem>
         </monomial_ids>
         <SubIntegrator>
           <Name>LCM_STS_MIN_NORM_2</Name>
