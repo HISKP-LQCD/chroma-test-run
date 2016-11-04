@@ -41,6 +41,26 @@ The only inverters with `MULTIGRID` in their name seem to be the
 
 Tom's example does not contain predictors. Do we want to use one?
 
+### Trajectory Length
+
+Currently the time step is 0.5 and there are 25 steps. This would give a
+trajectory length of 12.5. Shouldn't the trajectory length be in the order of
+unity?
+
+### Integrator
+
+There are four “minimal norm“ integrators, They differ in `STS` and `TST`. `S`
+stands for action and `T` for the kinetic part, the momentum in the molecular
+dynamics time direction. There are also variants with a `DTAU` suffix. Perhaps
+one should find out what those are. Tom uses `LCM_STS_MIN_NORM_2` in his
+example, so it probably is a sensible choice for us.
+
+### Time Scales
+
+The gauge part is integrated twice in each time step. All fermionic parts are
+integrated on the coarsest time scale at the moment. We probably want to
+integrate the various Hasenbusch terms on different scales.
+
 ## Notes
 
 ### CONV
@@ -49,5 +69,10 @@ We are not sure what `CONV` means in the context of monomials. Casten's guess
 is “conventional” which is a good contrast to “ratio”. In Tom's example,
 `CONV_CONV` is used for a Hasenbusch term. The usage of `RATIO_CONV_CONV`
 should be fine in the Hasenbusch terms.
+
+### Time Lattice Extent
+
+From the various tutorials it seems that the last value in the lattice spacing
+is special, that should be time.
 
 <!-- vim: set spell textwidth=79 : -->
