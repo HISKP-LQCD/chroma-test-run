@@ -21,8 +21,8 @@
     <!-- TODO How many trajectories do we want? -->
     <StartUpdateNum>0</StartUpdateNum>
     <NWarmUpUpdates>0</NWarmUpUpdates>
-    <NProductionUpdates>2</NProductionUpdates>
-    <NUpdatesThisRun>2</NUpdatesThisRun>
+    <NProductionUpdates>20</NProductionUpdates>
+    <NUpdatesThisRun>100</NUpdatesThisRun>
     <SaveInterval>1</SaveInterval>
 
     <!-- This probably generates a single LIME file for everything. -->
@@ -362,7 +362,7 @@
     </MDIntegrator><!--}}}-->
 
     <!-- <nrow>24 24 24 64</nrow> -->
-    <nrow>4 4 4 8</nrow>
+    <nrow>2 2 2 2</nrow>
 
   </HMCTrj>
 
