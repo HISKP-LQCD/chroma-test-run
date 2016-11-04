@@ -221,7 +221,6 @@
         </NamedObject>
       </elem><!--}}}-->
 
-
       <!-- (strange_clover) Clover even-even: strange {{{ -->
       <elem>
         <Name>N_FLAVOR_LOGDET_EVEN_EVEN_FERM_MONOMIAL</Name>
@@ -255,16 +254,16 @@
           <monomial_id>strange_clover</monomial_id>
         </NamedObject>
       </elem><!--}}}-->
-
     </Monomials>
 
     <Hamiltonian><!--{{{-->
       <monomial_ids>
         <elem>gauge</elem>
-        <elem>up_down_wilson</elem>
+        <elem>up_down_hasenbusch_1</elem>
+        <elem>up_down_hasenbusch_last</elem>
         <elem>up_down_clover</elem>
-        <elem>strange_wilson</elem>
-        <!-- <elem>up_down_hasenbusch</elem> -->
+        <elem>strange</elem>
+        <elem>strange_clover</elem>
       </monomial_ids>
     </Hamiltonian><!--}}}-->
 
