@@ -214,7 +214,7 @@
               <phases_dir>1 1 1</phases_dir>
             </FermionBC>
           </FermState>
-          </FermionAction>
+        </FermionAction>
         <ChronologicalPredictor>
           <Name>LAST_SOLUTION_4D_PREDICTOR</Name>
         </ChronologicalPredictor>
