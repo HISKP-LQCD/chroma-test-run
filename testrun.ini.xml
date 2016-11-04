@@ -74,7 +74,7 @@
             <MaxCG>1000</MaxCG>
           </InvertParam>
           <FermionAction>
-            <FermAct>WILSON</FermAct>
+            <FermAct>CLOVER</FermAct>
             <!-- This particular mass is the desired one, so that should not be changed. -->
             <Mass>-0.1265</Mass>
             <FermState>
@@ -98,7 +98,7 @@
             <MaxCG>1000</MaxCG>
           </InvertParam>
           <FermionAction>
-            <FermAct>WILSON</FermAct>
+            <FermAct>CLOVER</FermAct>
             <Mass>-0.1265</Mass>
             <FermState>
               <Name>STOUT_FERM_STATE</Name>
@@ -131,7 +131,7 @@
           <MaxCG>1000</MaxCG>
         </InvertParam>
         <FermionAction>
-          <FermAct>WILSON</FermAct>
+          <FermAct>CLOVER</FermAct>
           <!-- TODO -->
           <Mass>-0.1265</Mass>
           <FermState>
