@@ -4,7 +4,7 @@
 
     <Cfg>
       <!-- TODO What type of configuration do we want to start with, `UNIT` (cold) or `DISORDERED` (hot) or `WEAK_FIELD` (no idea) perhaps? -->
-      <cfg_type>UNIT</cfg_type>
+      <cfg_type>DISORDERED</cfg_type>
       <cfg_file>DUMMY</cfg_file>
     </Cfg>
 
@@ -21,8 +21,8 @@
     <!-- TODO How many trajectories do we want? -->
     <StartUpdateNum>0</StartUpdateNum>
     <NWarmUpUpdates>0</NWarmUpUpdates>
-    <NProductionUpdates>20</NProductionUpdates>
-    <NUpdatesThisRun>20</NUpdatesThisRun>
+    <NProductionUpdates>10</NProductionUpdates>
+    <NUpdatesThisRun>10</NUpdatesThisRun>
     <SaveInterval>1</SaveInterval>
 
     <!-- This probably generates a single LIME file for everything. -->
@@ -128,6 +128,7 @@
           <FermAct>CLOVER</FermAct>
           <Mass>-0.1265</Mass>
           <clovCoeff>1.0</clovCoeff>
+          <!--
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
             <rho>1.1</rho>
@@ -137,6 +138,11 @@
               <boundary>1 1 1 -1</boundary>
             </FermionBC>
           </FermState>
+          -->
+          <FermionBC>
+            <FermBC>PERIODIC_FERMBC</FermBC>
+            <boundary>1 1 1 -1</boundary>
+          </FermionBC>
         </FermionAction>
         <ChronologicalPredictor>
           <Name>LAST_SOLUTION_4D_PREDICTOR</Name>
@@ -153,15 +159,17 @@
           <FermAct>CLOVER</FermAct>
           <Mass>-0.1265</Mass>
           <clovCoeff>1.0</clovCoeff>
+          <!--
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
             <rho>1.1</rho>
             <n_smear>6</n_smear>
-            <FermionBC>
-              <FermBC>PERIODIC_FERMBC</FermBC>
-              <boundary>1 1 1 -1</boundary>
-            </FermionBC>
           </FermState>
+          -->
+          <FermionBC>
+            <FermBC>PERIODIC_FERMBC</FermBC>
+            <boundary>1 1 1 -1</boundary>
+          </FermionBC>
         </FermionAction>
         <num_flavors>2</num_flavors>
         <NamedObject>
