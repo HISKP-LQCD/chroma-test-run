@@ -80,7 +80,7 @@
             <clovCoeff>1.0</clovCoeff>
             <FermState>
               <Name>STOUT_FERM_STATE</Name>
-              <rho>1.0</rho>
+              <rho>1.1</rho>
               <n_smear>6</n_smear>
               <FermionBC>
                 <FermBC>TWISTED_FERMBC</FermBC>
@@ -104,7 +104,7 @@
             <clovCoeff>1.0</clovCoeff>
             <FermState>
               <Name>STOUT_FERM_STATE</Name>
-              <rho>1.0</rho>
+              <rho>1.1</rho>
               <n_smear>6</n_smear>
               <FermionBC>
                 <FermBC>TWISTED_FERMBC</FermBC>
@@ -137,7 +137,7 @@
           <clovCoeff>1.0</clovCoeff>
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
-            <rho>1.0</rho>
+            <rho>1.1</rho>
             <n_smear>6</n_smear>
             <FermionBC>
               <FermBC>TWISTED_FERMBC</FermBC>
@@ -173,7 +173,7 @@
 -->
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
-            <rho>1.0</rho>
+            <rho>1.1</rho>
             <n_smear>6</n_smear>
             <FermionBC>
               <FermBC>TWISTED_FERMBC</FermBC>
@@ -200,7 +200,7 @@
             <clovCoeff>1.0</clovCoeff>
             <FermState>
               <Name>STOUT_FERM_STATE</Name>
-              <rho>1.0</rho>
+              <rho>1.1</rho>
               <n_smear>6</n_smear>
               <FermionBC>
                 <FermBC>TWISTED_FERMBC</FermBC>
@@ -311,7 +311,7 @@
 -->
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
-            <rho>1.0</rho>
+            <rho>1.1</rho>
             <n_smear>6</n_smear>
             <FermionBC>
               <FermBC>TWISTED_FERMBC</FermBC>
