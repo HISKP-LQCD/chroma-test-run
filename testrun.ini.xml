@@ -67,7 +67,6 @@
       <elem>
         <Name>TWO_FLAVOR_EOPREC_CONSTDET_RATIO_CONV_CONV_FERM_MONOMIAL</Name>
         <Action>
-          <!-- This is the numerator. -->
           <InvertParam>
             <invType>CG_INVERTER</invType>
             <RsdCG>1.0e-12</RsdCG>
@@ -75,7 +74,6 @@
           </InvertParam>
           <FermionAction>
             <FermAct>CLOVER</FermAct>
-            <!-- This particular mass is the desired one, so that should not be changed. -->
             <Mass>-0.1265</Mass>
             <clovCoeff>1.0</clovCoeff>
             <FermState>
@@ -90,7 +88,6 @@
           </FermionAction>
         </Action>
         <PrecAction>
-          <!-- This is the denominator. -->
           <InvertParam>
             <invType>CG_INVERTER</invType>
             <RsdCG>1.0e-12</RsdCG>
@@ -156,15 +153,6 @@
           <FermAct>CLOVER</FermAct>
           <Mass>-0.1265</Mass>
           <clovCoeff>1.0</clovCoeff>
-          <!--
-          <ZeroEnergy>0</ZeroEnergy>
-          <AnisoParam>
-            <anisoP>false</anisoP>
-            <t_dir>3</t_dir>
-            <xi_0>1</xi_0>
-            <nu>1</nu>
-          </AnisoParam>
--->
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
             <rho>1.1</rho>
@@ -290,15 +278,6 @@
           <FermAct>CLOVER</FermAct>
           <Mass>-0.057</Mass>
           <clovCoeff>1.0</clovCoeff>
-          <!--
-          <ZeroEnergy>0</ZeroEnergy>
-          <AnisoParam>
-            <anisoP>false</anisoP>
-            <t_dir>3</t_dir>
-            <xi_0>1</xi_0>
-            <nu>1</nu>
-          </AnisoParam>
--->
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
             <rho>1.1</rho>
@@ -319,11 +298,13 @@
     <Hamiltonian><!--{{{-->
       <monomial_ids>
         <elem>gauge</elem>
+        <!--
         <elem>up_down_hasenbusch_1</elem>
         <elem>up_down_hasenbusch_last</elem>
         <elem>up_down_clover</elem>
         <elem>strange</elem>
         <elem>strange_clover</elem>
+        -->
       </monomial_ids>
     </Hamiltonian><!--}}}-->
 
@@ -333,19 +314,23 @@
         <Name>LCM_STS_MIN_NORM_2</Name>
         <n_steps>25</n_steps>
         <monomial_ids>
+          <elem>gauge</elem>
+          <!--
           <elem>up_down_hasenbusch_1</elem>
           <elem>up_down_hasenbusch_last</elem>
           <elem>up_down_clover</elem>
           <elem>strange</elem>
           <elem>strange_clover</elem>
+          -->
         </monomial_ids>
+        <!--
         <SubIntegrator>
           <Name>LCM_STS_MIN_NORM_2</Name>
           <n_steps>2</n_steps>
           <monomial_ids>
-            <elem>gauge</elem>
           </monomial_ids>
         </SubIntegrator>
+        -->
       </Integrator>
     </MDIntegrator><!--}}}-->
 
