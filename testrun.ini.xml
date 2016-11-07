@@ -133,10 +133,6 @@
             <Name>STOUT_FERM_STATE</Name>
             <rho>1.1</rho>
             <n_smear>6</n_smear>
-            <FermionBC>
-              <FermBC>PERIODIC_FERMBC</FermBC>
-              <boundary>1 1 1 -1</boundary>
-            </FermionBC>
           </FermState>
           -->
           <FermionBC>
