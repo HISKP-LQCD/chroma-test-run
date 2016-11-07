@@ -77,7 +77,7 @@
             <FermAct>CLOVER</FermAct>
             <!-- This particular mass is the desired one, so that should not be changed. -->
             <Mass>-0.1265</Mass>
-            <clovCoeff>1.24930970916466</clovCoeff>
+            <clovCoeff>1.0</clovCoeff>
             <FermState>
               <Name>STOUT_FERM_STATE</Name>
               <rho>1.0</rho>
@@ -101,7 +101,7 @@
           <FermionAction>
             <FermAct>CLOVER</FermAct>
             <Mass>-0.1265</Mass>
-            <clovCoeff>1.24930970916466</clovCoeff>
+            <clovCoeff>1.0</clovCoeff>
             <FermState>
               <Name>STOUT_FERM_STATE</Name>
               <rho>1.0</rho>
@@ -134,7 +134,7 @@
         <FermionAction>
           <FermAct>CLOVER</FermAct>
           <Mass>-0.1265</Mass>
-          <clovCoeff>1.24930970916466</clovCoeff>
+          <clovCoeff>1.0</clovCoeff>
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
             <rho>1.0</rho>
@@ -161,7 +161,7 @@
         <FermionAction>
           <FermAct>CLOVER</FermAct>
           <Mass>-0.1265</Mass>
-          <clovCoeff>1.24930970916466</clovCoeff>
+          <clovCoeff>1.0</clovCoeff>
           <!--
           <ZeroEnergy>0</ZeroEnergy>
           <AnisoParam>
@@ -197,7 +197,7 @@
           <FermionAction>
             <FermAct>CLOVER</FermAct>
             <Mass>-0.057</Mass>
-            <clovCoeff>1.24930970916466</clovCoeff>
+            <clovCoeff>1.0</clovCoeff>
             <FermState>
               <Name>STOUT_FERM_STATE</Name>
               <rho>1.0</rho>
@@ -299,7 +299,7 @@
         <FermionAction>
           <FermAct>CLOVER</FermAct>
           <Mass>-0.057</Mass>
-          <clovCoeff>1.24930970916466</clovCoeff>
+          <clovCoeff>1.0</clovCoeff>
           <!--
           <ZeroEnergy>0</ZeroEnergy>
           <AnisoParam>
