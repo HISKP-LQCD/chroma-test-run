@@ -83,10 +83,8 @@
               <rho>1.1</rho>
               <n_smear>6</n_smear>
               <FermionBC>
-                <FermBC>TWISTED_FERMBC</FermBC>
-                <boundary>1 1 1 1</boundary>
-                <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
-                <phases_dir>1 1 1</phases_dir>
+                <FermBC>PERIODIC_FERMBC</FermBC>
+                <boundary>1 1 1 -1</boundary>
               </FermionBC>
             </FermState>
           </FermionAction>
@@ -107,10 +105,8 @@
               <rho>1.1</rho>
               <n_smear>6</n_smear>
               <FermionBC>
-                <FermBC>TWISTED_FERMBC</FermBC>
-                <boundary>1 1 1 1</boundary>
-                <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
-                <phases_dir>1 1 1</phases_dir>
+                <FermBC>PERIODIC_FERMBC</FermBC>
+                <boundary>1 1 1 -1</boundary>
               </FermionBC>
             </FermState>
           </FermionAction>
@@ -140,13 +136,11 @@
             <rho>1.1</rho>
             <n_smear>6</n_smear>
             <FermionBC>
-              <FermBC>TWISTED_FERMBC</FermBC>
-              <boundary>1 1 1 1</boundary>
-              <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
-              <phases_dir>1 1 1</phases_dir>
+              <FermBC>PERIODIC_FERMBC</FermBC>
+              <boundary>1 1 1 -1</boundary>
             </FermionBC>
           </FermState>
-          </FermionAction>
+        </FermionAction>
         <ChronologicalPredictor>
           <Name>LAST_SOLUTION_4D_PREDICTOR</Name>
         </ChronologicalPredictor>
@@ -176,10 +170,8 @@
             <rho>1.1</rho>
             <n_smear>6</n_smear>
             <FermionBC>
-              <FermBC>TWISTED_FERMBC</FermBC>
-              <boundary>1 1 1 1</boundary>
-              <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
-              <phases_dir>1 1 1</phases_dir>
+              <FermBC>PERIODIC_FERMBC</FermBC>
+              <boundary>1 1 1 -1</boundary>
             </FermionBC>
           </FermState>
         </FermionAction>
@@ -203,10 +195,8 @@
               <rho>1.1</rho>
               <n_smear>6</n_smear>
               <FermionBC>
-                <FermBC>TWISTED_FERMBC</FermBC>
-                <boundary>1 1 1 1</boundary>
-                <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
-                <phases_dir>1 1 1</phases_dir>
+                <FermBC>PERIODIC_FERMBC</FermBC>
+                <boundary>1 1 1 -1</boundary>
               </FermionBC>
             </FermState>
           </FermionAction>
@@ -314,10 +304,8 @@
             <rho>1.1</rho>
             <n_smear>6</n_smear>
             <FermionBC>
-              <FermBC>TWISTED_FERMBC</FermBC>
-              <boundary>1 1 1 1</boundary>
-              <phases_by_pi>1.0 1.0 1.0</phases_by_pi>
-              <phases_dir>1 1 1</phases_dir>
+              <FermBC>PERIODIC_FERMBC</FermBC>
+              <boundary>1 1 1 -1</boundary>
             </FermionBC>
           </FermState>
         </FermionAction>
