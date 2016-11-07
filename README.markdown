@@ -10,15 +10,6 @@ provided by Tom. It also contains snippets from
 
 ## Tasks
 
-### Boundary Conditions
-
-Bartek said that we want twisted boundary conditions. From the source code I
-gathered that we need an `int`-array `boundary`, a `Real`-array `phases_by_pi`
-and another `int`-array `phases_dir`. I do not want to include pi numerically
-as that would certainly introduce rounding errors, perhaps it should be
-something like `1.0` in the directions that we want to have the twisted
-boundary conditions?
-
 ### Hasenbusch Terms
 
 Currently there is only the first Hasenbusch term (with desired mass in the
@@ -76,11 +67,6 @@ Are there any particular things that we want to measure in-line during the HMC?
 
 The `LW_TREE_GAUGEACT` needs another parameter `u0`. I have copied the value
 from Tom's script. I haven't understood what this value is for, though.
-
-### Clover Coefficient
-
-The clover coefficient is just copied from Tom's script. Is that the numerical
-value that we want to use?
 
 ### Action Approximation
 
