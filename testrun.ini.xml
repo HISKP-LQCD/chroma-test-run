@@ -22,7 +22,7 @@
     <StartUpdateNum>0</StartUpdateNum>
     <NWarmUpUpdates>0</NWarmUpUpdates>
     <NProductionUpdates>20</NProductionUpdates>
-    <NUpdatesThisRun>100</NUpdatesThisRun>
+    <NUpdatesThisRun>20</NUpdatesThisRun>
     <SaveInterval>1</SaveInterval>
 
     <!-- This probably generates a single LIME file for everything. -->
@@ -298,10 +298,10 @@
     <Hamiltonian><!--{{{-->
       <monomial_ids>
         <elem>gauge</elem>
-        <!--
-        <elem>up_down_hasenbusch_1</elem>
         <elem>up_down_hasenbusch_last</elem>
         <elem>up_down_clover</elem>
+        <!--
+        <elem>up_down_hasenbusch_1</elem>
         <elem>strange</elem>
         <elem>strange_clover</elem>
         -->
@@ -315,10 +315,10 @@
         <n_steps>25</n_steps>
         <monomial_ids>
           <elem>gauge</elem>
-          <!--
-          <elem>up_down_hasenbusch_1</elem>
           <elem>up_down_hasenbusch_last</elem>
           <elem>up_down_clover</elem>
+          <!--
+          <elem>up_down_hasenbusch_1</elem>
           <elem>strange</elem>
           <elem>strange_clover</elem>
           -->
