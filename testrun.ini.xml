@@ -125,7 +125,7 @@
           <MaxCG>1000</MaxCG>
         </InvertParam>
         <FermionAction>
-          <FermAct>CLOVER</FermAct>
+          <FermAct>WILSON</FermAct>
           <Mass>-0.1265</Mass>
           <clovCoeff>1.0</clovCoeff>
           <!--
@@ -302,8 +302,8 @@
     <Hamiltonian><!--{{{-->
       <monomial_ids>
         <elem>gauge</elem>
-        <!--
         <elem>up_down_hasenbusch_last</elem>
+        <!--
         <elem>up_down_clover</elem>
         <elem>up_down_hasenbusch_1</elem>
         <elem>strange</elem>
@@ -319,8 +319,8 @@
         <n_steps>25</n_steps>
         <monomial_ids>
           <elem>gauge</elem>
-          <!--
           <elem>up_down_hasenbusch_last</elem>
+          <!--
           <elem>up_down_clover</elem>
           <elem>up_down_hasenbusch_1</elem>
           <elem>strange</elem>

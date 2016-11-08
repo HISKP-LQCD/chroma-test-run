@@ -19,6 +19,11 @@ Pure gauge works just fine:
 
 ### N_f = 2, Pure Wilson
 
+Also works:
+
+![](plots/wilson2-plaquette.png)
+![](plots/wilson2-deltaH.png)
+
 ## Tasks
 
 ### Hasenbusch Terms
