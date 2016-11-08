@@ -8,6 +8,17 @@ tutorial](http://people.physik.hu-berlin.de/~urbach/lap08/hmc/) and a file
 provided by Tom. It also contains snippets from
 `Joo-2008-Guide_to_Writing_Chroma_XML_Files`.
 
+## Status
+
+### Pure Gauge
+
+Pure gauge works just fine:
+
+![](plots/pure-gauge-plaquette.png)
+![](plots/pure-gauge-deltaH.png)
+
+### N_f = 2, Pure Wilson
+
 ## Tasks
 
 ### Hasenbusch Terms
