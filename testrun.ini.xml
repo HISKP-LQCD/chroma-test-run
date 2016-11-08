@@ -21,8 +21,8 @@
     <!-- TODO How many trajectories do we want? -->
     <StartUpdateNum>0</StartUpdateNum>
     <NWarmUpUpdates>0</NWarmUpUpdates>
-    <NProductionUpdates>10</NProductionUpdates>
-    <NUpdatesThisRun>10</NUpdatesThisRun>
+    <NProductionUpdates>20</NProductionUpdates>
+    <NUpdatesThisRun>20</NUpdatesThisRun>
     <SaveInterval>1</SaveInterval>
 
     <!-- This probably generates a single LIME file for everything. -->
@@ -125,7 +125,7 @@
           <MaxCG>1000</MaxCG>
         </InvertParam>
         <FermionAction>
-          <FermAct>WILSON</FermAct>
+          <FermAct>CLOVER</FermAct>
           <Mass>-0.1265</Mass>
           <clovCoeff>1.0</clovCoeff>
           <!--
@@ -303,8 +303,8 @@
       <monomial_ids>
         <elem>gauge</elem>
         <elem>up_down_hasenbusch_last</elem>
-        <!--
         <elem>up_down_clover</elem>
+        <!--
         <elem>up_down_hasenbusch_1</elem>
         <elem>strange</elem>
         <elem>strange_clover</elem>
@@ -320,8 +320,8 @@
         <monomial_ids>
           <elem>gauge</elem>
           <elem>up_down_hasenbusch_last</elem>
-          <!--
           <elem>up_down_clover</elem>
+          <!--
           <elem>up_down_hasenbusch_1</elem>
           <elem>strange</elem>
           <elem>strange_clover</elem>

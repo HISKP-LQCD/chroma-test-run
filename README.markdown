@@ -24,6 +24,24 @@ Also works:
 ![](plots/wilson2-plaquette.png)
 ![](plots/wilson2-deltaH.png)
 
+### N_f = 2, Clover but without extra even-even term
+
+This should not work, the even-even term of the clover is missing. The fermions
+are simulated using `CONSTDET`. It should not work. The results look kind of
+sensible, though:
+
+![](plots/partial_clover2-plaquette.png)
+![](plots/partial_clover2-deltaH.png)
+
+I don't have an explanation for this at the moment.
+
+### N_f = 2, Clover with even-even term
+
+Strangely enough, this also works rather good.
+
+![](plots/full_clover2-plaquette.png)
+![](plots/full_clover2-deltaH.png)
+
 ## Tasks
 
 ### Hasenbusch Terms
