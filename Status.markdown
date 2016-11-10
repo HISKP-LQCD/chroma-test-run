@@ -1,4 +1,4 @@
-# Status
+# Status of Test Runs
 
 ## Pure Gauge
 
@@ -47,19 +47,63 @@ Going back to the two flavors which have worked already, I now add the stout
 smearing. With ×6 smearing on the small 4 lattice, it did not work. With ×1
 smearing, it seems to work somewhat:
 
+### Stout smearing ×1
+
 ![](plots/clover2-stout1-plaquette.png)
 ![](plots/clover2-stout1-deltaH.png)
 
-## N_f = 2, full clover, stout smearing ×3
+### Stout smearing ×3
 
 That seems to be too much smearing, this does not work nicely any more:
 
 ![](plots/clover2-stout1-plaquette.png)
 ![](plots/clover2-stout1-deltaH.png)
 
-## N_f = 2, full clover, stout smearing ×6
+### Stout smearing ×6
 
 Six times smearing just does not work at all:
 
 ![](plots/clover2-stout1-plaquette.png)
 ![](plots/clover2-stout1-deltaH.png)
+
+## N_f = 1, Remez
+
+2016-11-10
+
+Previously, the rational approximation coefficients have been copied from Tom's
+restart script. This is probably not the best idea, they need to be computed
+again. I have read that the Remez algorithm is used for that, Chroma
+conveniently has that implemented.
+
+In the restart script, the method is still `REMEZ`. So Tom must have supplied
+the coefficients by hand somehow.
+
+### Pure Wilson, first test
+
+This is a first test. I have used the following for the action approximation:
+
+    <RationalApprox>
+      <ratApproxType>REMEZ</ratApproxType>
+      <lowerMin>1.0e-3</lowerMin>
+      <upperMax>33</upperMax>
+      <numPower>-1</numPower>
+      <denPower>2</denPower>
+      <degree>16</degree>
+    </RationalApprox>
+
+And the following for the force approximation:
+
+    <RationalApprox>
+      <ratApproxType>REMEZ</ratApproxType>
+      <lowerMin>1.0e-3</lowerMin>
+      <upperMax>33</upperMax>
+      <numPower>-1</numPower>
+      <denPower>2</denPower>
+      <degree>14</degree>
+    </RationalApprox>
+
+This run had stout ×6 activated. It does not work:
+
+![](plots/wilson1-remez-test1-plaquette.png)
+![](plots/wilson1-remez-test1-deltaH.png)
+

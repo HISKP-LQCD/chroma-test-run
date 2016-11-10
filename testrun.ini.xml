@@ -178,15 +178,17 @@
             <FermAct>WILSON</FermAct>
             <Mass>-0.057</Mass>
             <clovCoeff>1.0</clovCoeff>
+            <!--
             <FermState>
               <Name>STOUT_FERM_STATE</Name>
               <rho>1.1</rho>
               <n_smear>6</n_smear>
+            </FermState>
+            -->
               <FermionBC>
                 <FermBC>PERIODIC_FERMBC</FermBC>
                 <boundary>1 1 1 -1</boundary>
               </FermionBC>
-            </FermState>
           </FermionAction>
           <ActionApprox>
             <InvertParam>

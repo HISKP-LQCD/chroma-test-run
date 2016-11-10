@@ -1,6 +1,8 @@
 *.lime
 *_restart_*.xml
 testrun.log.txt
+testrun.out-deltaH.pdf
+testrun.out-plaquette.pdf
 testrun.out.xml
 XMLDAT
 XMLLOG
