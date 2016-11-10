@@ -56,15 +56,15 @@ smearing, it seems to work somewhat:
 
 That seems to be too much smearing, this does not work nicely any more:
 
-![](plots/clover2-stout1-plaquette.png)
-![](plots/clover2-stout1-deltaH.png)
+![](plots/clover2-stout3-plaquette.png)
+![](plots/clover2-stout3-deltaH.png)
 
 ### Stout smearing ×6
 
 Six times smearing just does not work at all:
 
-![](plots/clover2-stout1-plaquette.png)
-![](plots/clover2-stout1-deltaH.png)
+![](plots/clover2-stout6-plaquette.png)
+![](plots/clover2-stout6-deltaH.png)
 
 ## N_f = 1, Remez
 
