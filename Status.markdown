@@ -125,3 +125,11 @@ we just want a single flavor?
 ![](plots/wilson1-remez-test3-deltaH.png)
 
 It works! I have yet to understand why this works, but at least it works now!
+
+### Add stout smearing ×1
+
+Run this again with ×1 stout smearing. This has worked acceptably before with
+the light flavors.
+
+![](plots/wilson1-remez-test4-plaquette.png)
+![](plots/wilson1-remez-test4-deltaH.png)
