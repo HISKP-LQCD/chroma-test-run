@@ -14,7 +14,7 @@ else
 fi
 
 
-$hmc -i testrun.ini.xml -o testrun.out.xml -geom 1 1 1 2 > testrun.log.txt
+OMP_NUM_THREADS=$(nproc) $hmc -i testrun.ini.xml -o testrun.out.xml -geom 1 1 1 2 > testrun.log.txt
 
 ../hmc-analysis-tools/plaquette.py testrun.out.xml
 convert testrun.out-deltaH.pdf -resize 400x400 plots/${1}-deltaH.png
