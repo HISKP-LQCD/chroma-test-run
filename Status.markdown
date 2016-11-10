@@ -107,3 +107,11 @@ This run had stout ×6 activated. It does not work:
 ![](plots/wilson1-remez-test1-plaquette.png)
 ![](plots/wilson1-remez-test1-deltaH.png)
 
+### No Smearing
+
+Without the smearing, it is not as bad as before.
+
+![](plots/wilson1-remez-test2-plaquette.png)
+![](plots/wilson1-remez-test2-deltaH.png)
+
+Still there is no sufficient acceptance rate.
