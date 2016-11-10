@@ -133,3 +133,22 @@ the light flavors.
 
 ![](plots/wilson1-remez-test4-plaquette.png)
 ![](plots/wilson1-remez-test4-deltaH.png)
+
+### Adding Clover
+
+The addition of the clover term also works just fine:
+
+![](plots/clover1-remez-plaquette.png)
+![](plots/clover1-remez-deltaH.png)
+
+## N_f = 3 with clover, ×1 stout smearing
+
+Everything together works now:
+
+![](plots/clover3-plaquette.png)
+![](plots/clover3-deltaH.png)
+
+Problems so far were:
+
+- Too much smearing.
+- Wrong coefficients in the rational approximation.

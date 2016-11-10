@@ -79,7 +79,7 @@
             <FermState>
               <Name>STOUT_FERM_STATE</Name>
               <rho>1.1</rho>
-              <n_smear>6</n_smear>
+              <n_smear>1</n_smear>
               <FermionBC>
                 <FermBC>PERIODIC_FERMBC</FermBC>
                 <boundary>1 1 1 -1</boundary>
@@ -100,7 +100,7 @@
             <FermState>
               <Name>STOUT_FERM_STATE</Name>
               <rho>1.1</rho>
-              <n_smear>6</n_smear>
+              <n_smear>1</n_smear>
               <FermionBC>
                 <FermBC>PERIODIC_FERMBC</FermBC>
                 <boundary>1 1 1 -1</boundary>
@@ -131,7 +131,7 @@
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
             <rho>1.1</rho>
-            <n_smear>6</n_smear>
+            <n_smear>1</n_smear>
             <FermionBC>
               <FermBC>PERIODIC_FERMBC</FermBC>
               <boundary>1 1 1 -1</boundary>
@@ -156,7 +156,7 @@
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
             <rho>1.1</rho>
-            <n_smear>6</n_smear>
+            <n_smear>1</n_smear>
             <FermionBC>
               <FermBC>PERIODIC_FERMBC</FermBC>
               <boundary>1 1 1 -1</boundary>
@@ -175,7 +175,7 @@
         <num_pf>1</num_pf>
         <Action>
           <FermionAction>
-            <FermAct>WILSON</FermAct>
+            <FermAct>CLOVER</FermAct>
             <Mass>-0.057</Mass>
             <clovCoeff>1.0</clovCoeff>
             <FermState>
@@ -237,7 +237,7 @@
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
             <rho>1.1</rho>
-            <n_smear>6</n_smear>
+            <n_smear>1</n_smear>
             <FermionBC>
               <FermBC>PERIODIC_FERMBC</FermBC>
               <boundary>1 1 1 -1</boundary>
@@ -255,11 +255,11 @@
       <monomial_ids>
         <elem>gauge</elem>
         <elem>strange</elem>
-        <!--
+        <elem>strange_clover</elem>
         <elem>up_down_hasenbusch_last</elem>
         <elem>up_down_clover</elem>
+        <!--
         <elem>up_down_hasenbusch_1</elem>
-        <elem>strange_clover</elem>
         -->
       </monomial_ids>
     </Hamiltonian><!--}}}-->
@@ -272,11 +272,11 @@
         <monomial_ids>
           <elem>gauge</elem>
           <elem>strange</elem>
-          <!--
+          <elem>strange_clover</elem>
           <elem>up_down_hasenbusch_last</elem>
           <elem>up_down_clover</elem>
+          <!--
           <elem>up_down_hasenbusch_1</elem>
-          <elem>strange_clover</elem>
           -->
         </monomial_ids>
         <!--
