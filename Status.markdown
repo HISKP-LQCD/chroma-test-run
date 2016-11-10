@@ -115,3 +115,13 @@ Without the smearing, it is not as bad as before.
 ![](plots/wilson1-remez-test2-deltaH.png)
 
 Still there is no sufficient acceptance rate.
+
+### Denominator Power set to 4
+
+Tom had a power of `-1/4` in his script. Perhaps that is really needed although
+we just want a single flavor?
+
+![](plots/wilson1-remez-test3-plaquette.png)
+![](plots/wilson1-remez-test3-deltaH.png)
+
+It works! I have yet to understand why this works, but at least it works now!

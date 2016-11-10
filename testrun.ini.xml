@@ -201,7 +201,7 @@
               <lowerMin>1.0e-3</lowerMin>
               <upperMax>33</upperMax>
               <numPower>-1</numPower>
-              <denPower>2</denPower>
+              <denPower>4</denPower>
               <degree>16</degree>
             </RationalApprox>
           </ActionApprox>
