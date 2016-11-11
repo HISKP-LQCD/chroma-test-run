@@ -258,8 +258,8 @@
         <elem>strange_clover</elem>
         <elem>up_down_hasenbusch_last</elem>
         <elem>up_down_clover</elem>
-        <!--
         <elem>up_down_hasenbusch_1</elem>
+        <!--
         -->
       </monomial_ids>
     </Hamiltonian><!--}}}-->
@@ -275,8 +275,8 @@
           <elem>strange_clover</elem>
           <elem>up_down_hasenbusch_last</elem>
           <elem>up_down_clover</elem>
-          <!--
           <elem>up_down_hasenbusch_1</elem>
+          <!--
           -->
         </monomial_ids>
         <!--
