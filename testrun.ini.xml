@@ -95,7 +95,7 @@
           </InvertParam>
           <FermionAction>
             <FermAct>CLOVER</FermAct>
-            <Mass>-0.1265</Mass>
+            <Mass>-0.057</Mass>
             <clovCoeff>1.0</clovCoeff>
             <FermState>
               <Name>STOUT_FERM_STATE</Name>
@@ -126,7 +126,7 @@
         </InvertParam>
         <FermionAction>
           <FermAct>CLOVER</FermAct>
-          <Mass>-0.1265</Mass>
+          <Mass>-0.057</Mass>
           <clovCoeff>1.0</clovCoeff>
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
