@@ -93,6 +93,8 @@ my laptop.
 We need to know how to run this on a certain number of clusters (MPI like) with
 a certain number of threads (OpenMP like) for a test run on a supercomputer.
 
+### Store Unsmeared Gauges
+
 ## Notes
 
 ### CONV
