@@ -9,5 +9,5 @@
 #@ bg_size = 32
 #@ queue
 
-runjob --ranks-per-node 1 : \
+runjob --ranks-per-node 1 --np 32 : \
     hmc -i testrun.ini.xml -o testrun.out.xml
