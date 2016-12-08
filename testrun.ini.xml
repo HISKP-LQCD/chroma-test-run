@@ -68,7 +68,7 @@
         <Name>TWO_FLAVOR_EOPREC_CONSTDET_RATIO_CONV_CONV_FERM_MONOMIAL</Name>
         <Action>
           <InvertParam>
-            <invType>CG_INVERTER</invType>
+            <invType>QPHIX_CLOVER_INVERTER</invType>
             <RsdCG>1.0e-12</RsdCG>
             <MaxCG>1000</MaxCG>
           </InvertParam>
@@ -79,7 +79,7 @@
             <FermState>
               <Name>STOUT_FERM_STATE</Name>
               <rho>1.1</rho>
-              <n_smear>1</n_smear>
+              <n_smear>6</n_smear>
               <FermionBC>
                 <FermBC>PERIODIC_FERMBC</FermBC>
                 <boundary>1 1 1 -1</boundary>
@@ -89,7 +89,7 @@
         </Action>
         <PrecAction>
           <InvertParam>
-            <invType>CG_INVERTER</invType>
+            <invType>QPHIX_CLOVER_INVERTER</invType>
             <RsdCG>1.0e-12</RsdCG>
             <MaxCG>1000</MaxCG>
           </InvertParam>
@@ -100,7 +100,7 @@
             <FermState>
               <Name>STOUT_FERM_STATE</Name>
               <rho>1.1</rho>
-              <n_smear>1</n_smear>
+              <n_smear>6</n_smear>
               <FermionBC>
                 <FermBC>PERIODIC_FERMBC</FermBC>
                 <boundary>1 1 1 -1</boundary>
@@ -120,7 +120,7 @@
       <elem>
         <Name>TWO_FLAVOR_EOPREC_CONSTDET_FERM_MONOMIAL</Name>
         <InvertParam>
-          <invType>CG_INVERTER</invType>
+          <invType>QPHIX_CLOVER_INVERTER</invType>
           <RsdCG>1.0e-12</RsdCG>
           <MaxCG>1000</MaxCG>
         </InvertParam>
@@ -131,7 +131,7 @@
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
             <rho>1.1</rho>
-            <n_smear>1</n_smear>
+            <n_smear>6</n_smear>
             <FermionBC>
               <FermBC>PERIODIC_FERMBC</FermBC>
               <boundary>1 1 1 -1</boundary>
@@ -156,7 +156,7 @@
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
             <rho>1.1</rho>
-            <n_smear>1</n_smear>
+            <n_smear>6</n_smear>
             <FermionBC>
               <FermBC>PERIODIC_FERMBC</FermBC>
               <boundary>1 1 1 -1</boundary>
@@ -181,7 +181,7 @@
             <FermState>
               <Name>STOUT_FERM_STATE</Name>
               <rho>1.1</rho>
-              <n_smear>1</n_smear>
+              <n_smear>6</n_smear>
               <FermionBC>
                 <FermBC>PERIODIC_FERMBC</FermBC>
                 <boundary>1 1 1 -1</boundary>
@@ -190,7 +190,7 @@
           </FermionAction>
           <ActionApprox>
             <InvertParam>
-              <invType>CG_INVERTER</invType>
+              <invType>QPHIX_CLOVER_INVERTER</invType>
               <RsdCG>1.0e-12</RsdCG>
               <MaxCG>1000</MaxCG>
             </InvertParam>
@@ -205,7 +205,7 @@
           </ActionApprox>
           <ForceApprox>
             <InvertParam>
-              <invType>CG_INVERTER</invType>
+              <invType>QPHIX_CLOVER_INVERTER</invType>
               <RsdCG>1e-7 1e-7 1e-7 1e-8 1e-8 1e-8 1e-9 1e-9 1e-9 1e-9 1e-10 1e-10 1e-10 1e-10</RsdCG>
               <MaxCG>5000</MaxCG>
             </InvertParam>
@@ -237,7 +237,7 @@
           <FermState>
             <Name>STOUT_FERM_STATE</Name>
             <rho>1.1</rho>
-            <n_smear>1</n_smear>
+            <n_smear>6</n_smear>
             <FermionBC>
               <FermBC>PERIODIC_FERMBC</FermBC>
               <boundary>1 1 1 -1</boundary>

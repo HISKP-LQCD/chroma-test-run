@@ -9,4 +9,4 @@
 
 export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
 srun ./hmc -i testrun.ini.xml -o testrun.out.xml \
-    -by 8 -bz 8 -c 16 -sy 1 -sz 2 -pxy 0 -pxyz 0 -minct 2
+    -by 8 -bz 8 -c 24 -sy 1 -sz 1 -pxy 1 -pxyz 0 -minct 2
